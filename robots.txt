@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /php/
+Disallow: /tools/
+
+Sitemap: https://daner.ao/sitemap.xml

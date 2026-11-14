@@ -1,0 +1,924 @@
+<!doctype html>
+<!-- Daner Energias | Portefólio (en). Estilos e scripts partilhados com a página inicial. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gas network projects portfolio | Daner Energias</title>
+    <meta
+      name="description"
+      content="Gas network projects by Daner Energias for industry, commerce and housing in Angola."
+    />
+    <meta name="theme-color" content="#1E2733" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Daner Energias" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="pt_AO" />
+    <meta property="og:title" content="Gas network projects portfolio | Daner Energias" />
+    <meta
+      property="og:description"
+      content="Gas network projects by Daner Energias for industry, commerce and housing in Angola."
+    />
+    <meta property="og:url" content="https://daner.ao/en/portfolio.html" />
+    <meta property="og:image" content="https://daner.ao/images/og-daner-en.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Daner Energias: we changed because we grew" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gas network projects portfolio | Daner Energias" />
+    <meta
+      name="twitter:description"
+      content="Gas network projects by Daner Energias for industry, commerce and housing in Angola."
+    />
+    <meta name="twitter:image" content="https://daner.ao/images/og-daner-en.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../images/svg/Simbulo.svg" />
+    <link rel="icon" type="image/png" href="../images/favicon-64.png" />
+    <!-- Alternate languages -->
+    <link rel="canonical" href="https://daner.ao/en/portfolio.html" />
+    <link rel="alternate" hreflang="pt-AO" href="https://daner.ao/portefolio.html" />
+    <link rel="alternate" hreflang="en" href="https://daner.ao/en/portfolio.html" />
+    <link rel="alternate" hreflang="x-default" href="https://daner.ao/portefolio.html" />
+    <!-- Styles: libraries, template, then Daner identity (order matters) -->
+    <link rel="stylesheet" href="../css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/vendor/aos.css" />
+    <link rel="stylesheet" href="../css/vendor/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../css/vendor/slick.css" />
+    <link rel="stylesheet" href="../css/vendor/fancybox.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/daner.css" />
+    <!-- Analytics: paste GA4, Meta Pixel and LinkedIn Insight Tag here (IDs to be confirmed) -->
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Skip to content</a>
+    <!-- ========== HEADER: logo, main menu, language switch and the Request an assessment button ========== -->
+    <header class="header border-bottom-color">
+      <div class="b-container">
+        <nav class="navbar navbar-expand-lg py-3 py-lg-1" aria-label="Main menu">
+          <div class="container-fluid">
+            <div class="logo-box">
+              <a class="navbar-brand" href="index.html"
+                ><img
+                  width="159"
+                  height="38"
+                  src="../images/svg/Logo%20horizontal%20para%20fundos%20escuro.svg"
+                  alt="Daner Energias"
+                  class="header-logo"
+              /></a>
+            </div>
+            <button
+              class="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Menu"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="offcanvas offcanvas-start bg-heading-color-3"
+              tabindex="-1"
+              id="offcanvasNavbar"
+            >
+              <div class="offcanvas-header">
+                <div class="logo-box">
+                  <a class="navbar-brand" href="index.html"
+                    ><img
+                      width="159"
+                      height="38"
+                      src="../images/svg/Logo%20horizontal%20para%20fundos%20escuro.svg"
+                      alt="Daner Energias"
+                      class="header-logo"
+                  /></a>
+                </div>
+                <button
+                  type="button"
+                  class="btn-close bg-accent-color-2"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div
+                class="offcanvas-body d-flex flex-column flex-lg-row justify-content-start justify-content-lg-end align-items-start align-items-lg-center gap-4 gap-lg-5"
+              >
+                <ul class="navbar-nav gap-lg-2 gap-xl-4">
+                  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html#daner">About Daner</a>
+                  </li>
+                  <!-- Services: grouped submenu (opens on hover on desktop; on mobile, tap the arrow) -->
+                  <li class="nav-item dropdown nav-serv">
+                    <div class="d-flex align-items-center">
+                      <a class="nav-link" href="services.html">Services</a>
+                      <button
+                        class="nav-link dropdown-toggle icon-submenu"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        aria-label="Show services"
+                      >
+                        <i class="bi bi-chevron-down"></i>
+                      </button>
+                      <div class="dropdown-menu nav-serv-menu">
+                        <div class="nav-serv-group">
+                          <p class="nav-serv-h">Gas pipeline networks</p>
+                          <a class="dropdown-item" href="services/gas-network-design.html">Gas network design</a>
+                          <a class="dropdown-item" href="services/installation-maintenance.html">Installation and maintenance</a>
+                        </div>
+                        <div class="nav-serv-group">
+                          <p class="nav-serv-h">Industry and equipment</p>
+                          <a class="dropdown-item" href="services/lpg-filling-lines.html">LPG cylinder filling lines <span class="nav-new">New</span></a>
+                          <a class="dropdown-item" href="services/equipment-conversion.html">Equipment conversion</a>
+                        </div>
+                        <div class="nav-serv-group">
+                          <p class="nav-serv-h">Supply</p>
+                          <a class="dropdown-item" href="services/bulk-gas-supply.html">Bulk gas supply</a>
+                        </div>
+                        <a class="nav-serv-all" href="services.html"
+                          >See all services <i class="bi bi-arrow-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="portfolio.html" aria-current="page"
+                      >Portfolio</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html#contactos">Contact</a>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="../portefolio.html">PT</a></li>
+                </ul>
+                <div class="mt-0 nav-cta">
+                  <a href="index.html#pedido" class="btn-cta-primary align-self-start"
+                    ><span class="btn-text">Request an assessment</span
+                    ><i class="bi bi-arrow-right-circle-fill btn-icon-primary"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+      <!-- ========== BANNER: título da página e caminho de navegação ========== -->
+      <section class="section hero-banner port-banner position-relative">
+        <div
+          class="port-banner-bg"
+          style="background-image: url(&quot;../images/projecto-2.jpg&quot;)"
+        ></div>
+        <div class="bg-overlay-5"></div>
+        <div class="b-container h-100 position-relative z-2 overflow-hidden">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center mx-auto text-center text-white gap-4"
+            style="max-width: 895px"
+          >
+            <h1
+              class="text-white mb-0 from-left"
+              data-aos="fade-right"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            >
+              Portfolio
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PROJECTOS: filtro por categoria + grelha. Cada cartão abre a galeria de fotos (Fancybox). ========== -->
+      <section class="section">
+        <div class="b-container">
+          <div class="sec-head">
+            <div class="eyebrow text-heading-color-2">Portfolio</div>
+            <h2 class="text-heading-color-3">Proven experience in the field</h2>
+            <p class="port-intro">
+              Gas networks designed, installed and maintained by our team in factories, hotels,
+              shopping centres and residential complexes, with safety as the rule at every stage.
+            </p>
+          </div>
+          <div class="port-filter" role="group" aria-label="Filter projects by category">
+            <button type="button" class="port-chip active" data-filter="todos" aria-pressed="true">
+              All</button
+            ><button type="button" class="port-chip" data-filter="hotelaria" aria-pressed="false">
+              Hotels</button
+            ><button type="button" class="port-chip" data-filter="condominios" aria-pressed="false">
+              Residential</button
+            ><button type="button" class="port-chip" data-filter="industrial" aria-pressed="false">
+              Industrial</button
+            ><button type="button" class="port-chip" data-filter="comercial" aria-pressed="false">
+              Commercial
+            </button>
+          </div>
+          <div class="row g-3 g-lg-4 port-grid">
+            <div
+              class="col-6 col-lg-4 port-item"
+              data-cat="hotelaria"
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              <!-- EXEMPLO: local, tipo e descrição são provisórios até a equipa técnica enviar os dados. -->
+              <a
+                href="#projecto-epic-sana"
+                class="proj-card port-card"
+                data-project="epic-sana"
+                role="button"
+                aria-haspopup="dialog"
+              >
+                <span class="proj-img"
+                  ><img
+                    width="639"
+                    height="360"
+                    src="../images/projectos/epic-sana-1-sm.webp"
+                    alt="Epic Sana"
+                    loading="lazy"
+                  /><span class="proj-chip">Hotels</span
+                  ><span class="port-count"><i class="bi bi-images"></i> 4</span></span
+                >
+                <span class="proj-title">Epic Sana</span>
+                <span class="port-meta"
+                  >Luanda · Central metering and gas network for kitchens</span
+                >
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-4 port-item"
+              data-cat="hotelaria"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <!-- EXEMPLO: local, tipo e descrição são provisórios até a equipa técnica enviar os dados. -->
+              <a
+                href="#projecto-hotel-tropico"
+                class="proj-card port-card"
+                data-project="hotel-tropico"
+                role="button"
+                aria-haspopup="dialog"
+              >
+                <span class="proj-img"
+                  ><img
+                    width="639"
+                    height="360"
+                    src="../images/projectos/hotel-tropico-1-sm.webp"
+                    alt="Hotel Trópico"
+                    loading="lazy"
+                  /><span class="proj-chip">Hotels</span
+                  ><span class="port-count"><i class="bi bi-images"></i> 4</span></span
+                >
+                <span class="proj-title">Hotel Trópico</span>
+                <span class="port-meta">Luanda · Tanks and distribution network</span>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-4 port-item"
+              data-cat="hotelaria"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <!-- EXEMPLO: local, tipo e descrição são provisórios até a equipa técnica enviar os dados. -->
+              <a
+                href="#projecto-hotel-alvalade"
+                class="proj-card port-card"
+                data-project="hotel-alvalade"
+                role="button"
+                aria-haspopup="dialog"
+              >
+                <span class="proj-img"
+                  ><img
+                    width="528"
+                    height="297"
+                    src="../images/projectos/hotel-alvalade-1-sm.webp"
+                    alt="Hotel Alvalade"
+                    loading="lazy"
+                  /><span class="proj-chip">Hotels</span
+                  ><span class="port-count"><i class="bi bi-images"></i> 4</span></span
+                >
+                <span class="proj-title">Hotel Alvalade</span>
+                <span class="port-meta">Luanda · Gas network and tank</span>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-4 port-item"
+              data-cat="condominios"
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              <!-- EXEMPLO: local, tipo e descrição são provisórios até a equipa técnica enviar os dados. -->
+              <a
+                href="#projecto-condominio-royal"
+                class="proj-card port-card"
+                data-project="condominio-royal"
+                role="button"
+                aria-haspopup="dialog"
+              >
+                <span class="proj-img"
+                  ><img
+                    width="639"
+                    height="360"
+                    src="../images/projectos/condominio-royal-1-sm.webp"
+                    alt="Condomínio Royal"
+                    loading="lazy"
+                  /><span class="proj-chip">Residential</span
+                  ><span class="port-count"><i class="bi bi-images"></i> 4</span></span
+                >
+                <span class="proj-title">Condomínio Royal</span>
+                <span class="port-meta">Talatona, Luanda · Tanks and network for homes</span>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-4 port-item"
+              data-cat="condominios"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <!-- EXEMPLO: local, tipo e descrição são provisórios até a equipa técnica enviar os dados. -->
+              <a
+                href="#projecto-condominio-horizonte"
+                class="proj-card port-card"
+                data-project="condominio-horizonte"
+                role="button"
+                aria-haspopup="dialog"
+              >
+                <span class="proj-img"
+                  ><img
+                    width="639"
+                    height="360"
+                    src="../images/projectos/condominio-horizonte-1-sm.webp"
+                    alt="Condomínio Horizonte"
+                    loading="lazy"
+                  /><span class="proj-chip">Residential</span
+                  ><span class="port-count"><i class="bi bi-images"></i> 4</span></span
+                >
+                <span class="proj-title">Condomínio Horizonte</span>
+                <span class="port-meta">Morro Bento, Luanda · Networks and metering cabinets</span>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-4 port-item"
+              data-cat="industrial"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <!-- EXEMPLO: local, tipo e descrição são provisórios até a equipa técnica enviar os dados. -->
+              <a
+                href="#projecto-gastem"
+                class="proj-card port-card"
+                data-project="gastem"
+                role="button"
+                aria-haspopup="dialog"
+              >
+                <span class="proj-img"
+                  ><img
+                    width="639"
+                    height="360"
+                    src="../images/projectos/gastem-1-sm.webp"
+                    alt="GásTem"
+                    loading="lazy"
+                  /><span class="proj-chip">Industrial</span
+                  ><span class="port-count"><i class="bi bi-images"></i> 2</span></span
+                >
+                <span class="proj-title">GásTem</span>
+                <span class="port-meta">Luanda · Large-capacity gas tanks</span>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-4 port-item"
+              data-cat="industrial"
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              <!-- EXEMPLO: local, tipo e descrição são provisórios até a equipa técnica enviar os dados. -->
+              <a
+                href="#projecto-ceramica-sociatal"
+                class="proj-card port-card"
+                data-project="ceramica-sociatal"
+                role="button"
+                aria-haspopup="dialog"
+              >
+                <span class="proj-img"
+                  ><img
+                    width="640"
+                    height="360"
+                    src="../images/projectos/ceramica-sociatal-1-sm.webp"
+                    alt="Cerâmica Sociatal"
+                    loading="lazy"
+                  /><span class="proj-chip">Industrial</span></span
+                >
+                <span class="proj-title">Cerâmica Sociatal</span>
+                <span class="port-meta">Luanda · Tank and network for a factory</span>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-4 port-item"
+              data-cat="comercial"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <!-- EXEMPLO: local, tipo e descrição são provisórios até a equipa técnica enviar os dados. -->
+              <a
+                href="#projecto-lookal"
+                class="proj-card port-card"
+                data-project="lookal"
+                role="button"
+                aria-haspopup="dialog"
+              >
+                <span class="proj-img"
+                  ><img
+                    width="639"
+                    height="360"
+                    src="../images/projectos/lookal-1-sm.webp"
+                    alt="Lookal"
+                    loading="lazy"
+                  /><span class="proj-chip">Commercial</span
+                  ><span class="port-count"><i class="bi bi-images"></i> 3</span></span
+                >
+                <span class="proj-title">Lookal</span>
+                <span class="port-meta"
+                  >Ilha do Cabo, Luanda · Gas network for kitchen and dining room</span
+                >
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-4 port-item"
+              data-cat="comercial"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <!-- EXEMPLO: local, tipo e descrição são provisórios até a equipa técnica enviar os dados. -->
+              <a
+                href="#projecto-restaurante-veneza"
+                class="proj-card port-card"
+                data-project="restaurante-veneza"
+                role="button"
+                aria-haspopup="dialog"
+              >
+                <span class="proj-img"
+                  ><img
+                    width="639"
+                    height="360"
+                    src="../images/projectos/restaurante-veneza-1-sm.webp"
+                    alt="Restaurante Veneza"
+                    loading="lazy"
+                  /><span class="proj-chip">Commercial</span
+                  ><span class="port-count"><i class="bi bi-images"></i> 4</span></span
+                >
+                <span class="proj-title">Restaurante Veneza</span>
+                <span class="port-meta">Luanda · Gas network and outdoor tank</span>
+              </a>
+            </div>
+          </div>
+          <!-- Bloco de números e método (ideia do template) -->
+          <div class="port-method" data-aos="fade-up">
+            <div class="port-method-text">
+              <h3>Every project starts with a technical study</h3>
+              <p>
+                Before installing, we study the site, the consumption and the applicable standards.
+                The network is safe from day one and ready to grow.
+              </p>
+            </div>
+            <div class="port-method-stats">
+              <div>
+                <span class="count-static heading-2">20+</span>
+                <div class="stat-lbl">Years of experience</div>
+              </div>
+              <div>
+                <span class="count-static heading-2">300+</span>
+                <div class="stat-lbl">Installations per year</div>
+              </div>
+              <div>
+                <span class="count-static heading-2">24/7</span>
+                <div class="stat-lbl">Technical support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CLIENTES: mesmo carrossel da página inicial ========== -->
+      <section class="section pt-0">
+        <div class="b-container">
+          <div class="partners-band">
+            <p class="partners-title">Clients who trust us</p>
+            <!-- prettier-ignore -->
+            <div class="client-logos">
+              <img width="915" height="360" src="../images/cliente-01.svg" alt="Epic Sana" />
+              <img width="738" height="369" src="../images/cliente-07.svg" alt="Kero" />
+              <img width="915" height="360" src="../images/cliente-03.svg" alt="Hotel Alvalade" />
+              <img width="915" height="360" src="../images/cliente-04.svg" alt="Embassy of China in Angola" />
+              <img width="915" height="360" src="../images/cliente-05.svg" alt="Sino-Ord" />
+              <img width="1200" height="332" src="../images/cliente-06.svg" alt="Huawei" />
+              <img width="915" height="360" src="../images/cliente-02.svg" alt="Hotel Trópico" />
+              <img width="915" height="360" src="../images/cliente-08.svg" alt="Talatona Shopping" />
+              <img width="915" height="360" src="../images/cliente-09.svg" alt="Alimenta Angola" />
+              <img width="881" height="244" src="../images/cliente-10.svg" alt="Candando" />
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CHAMADA FINAL ========== -->
+      <section class="section pt-0">
+        <div class="b-container">
+          <div class="port-cta">
+            <div>
+              <h3>Have a gas project?</h3>
+              <p>
+                Tell us what you need. Our technical team reviews your case and replies with a
+                proposal.
+              </p>
+            </div>
+            <a href="index.html#pedido" class="btn-cta-primary"
+              ><span class="btn-text">Request a technical assessment</span
+              ><i class="bi bi-arrow-right-circle-fill btn-icon-primary"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FICHA DO PROJECTO (modal): preenchida por js/daner.js com os dados abaixo ========== -->
+    <div
+      class="modal fade port-modal"
+      id="portModal"
+      tabindex="-1"
+      aria-hidden="true"
+      aria-labelledby="portModalTitle"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down"
+      >
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close port-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body" id="portModalBody"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Dados de EXEMPLO de cada projecto. Substituir pelos dados reais da equipa técnica e remover o aviso "Dados de exemplo". -->
+    <script type="application/json" id="port-data">
+      {
+        "lab": {
+          "client": "Client",
+          "cat": "Category",
+          "loc": "Location",
+          "year": "Year",
+          "serv": "Services",
+          "gas": "Gas type",
+          "inst": "Installation",
+          "data": "Technical data",
+          "time": "Duration",
+          "ch": "Challenge",
+          "sol": "Solution",
+          "res": "Result",
+          "photos": "Photos",
+          "cta": "Request a technical assessment",
+          "sheet": "Technical sheet",
+          "draft": "Sample data"
+        },
+        "items": {
+          "epic-sana": {
+            "nome": "Epic Sana",
+            "cat": "Hotels",
+            "loc": "Luanda",
+            "ano": "2022",
+            "serv": "Design and installation",
+            "gas": "Propane (LPG)",
+            "inst": "Piped network with metering station",
+            "data": "180 m network and 8 consumption points",
+            "time": "6 weeks",
+            "ch": "Installing the network without stopping the kitchen or hotel services.",
+            "sol": "Phased work outside peak hours, with leak testing on every section.",
+            "res": "A safe, labelled network with accessible shut-off valves and no service interruption.",
+            "fotos": [
+              "../images/projectos/epic-sana-1.webp",
+              "../images/projectos/epic-sana-2.webp",
+              "../images/projectos/epic-sana-3.webp",
+              "../images/projectos/epic-sana-4.webp"
+            ],
+            "thumbs": [
+              "../images/projectos/epic-sana-1-sm.webp",
+              "../images/projectos/epic-sana-2-sm.webp",
+              "../images/projectos/epic-sana-3-sm.webp",
+              "../images/projectos/epic-sana-4-sm.webp"
+            ]
+          },
+          "hotel-tropico": {
+            "nome": "Hotel Trópico",
+            "cat": "Hotels",
+            "loc": "Luanda",
+            "ano": "2021",
+            "serv": "Design, installation and maintenance",
+            "gas": "Propane (LPG)",
+            "inst": "Two surface tanks and distribution network",
+            "data": "2 tanks of 2,000 L and 220 m of network",
+            "time": "8 weeks",
+            "ch": "Supplying kitchens and laundry from a single supply point.",
+            "sol": "Tanks in a protected area, with buried pipework and independent branches for each area.",
+            "res": "Stable supply to every area and periodic maintenance agreed with the hotel.",
+            "fotos": [
+              "../images/projectos/hotel-tropico-1.webp",
+              "../images/projectos/hotel-tropico-2.webp",
+              "../images/projectos/hotel-tropico-3.webp",
+              "../images/projectos/hotel-tropico-4.webp"
+            ],
+            "thumbs": [
+              "../images/projectos/hotel-tropico-1-sm.webp",
+              "../images/projectos/hotel-tropico-2-sm.webp",
+              "../images/projectos/hotel-tropico-3-sm.webp",
+              "../images/projectos/hotel-tropico-4-sm.webp"
+            ]
+          },
+          "hotel-alvalade": {
+            "nome": "Hotel Alvalade",
+            "cat": "Hotels",
+            "loc": "Luanda",
+            "ano": "2022",
+            "serv": "Design and installation",
+            "gas": "Propane (LPG)",
+            "inst": "Tank and kitchen network",
+            "data": "1 tank of 1,000 L and 90 m of network",
+            "time": "4 weeks",
+            "ch": "Limited space for the tank and metering station.",
+            "sol": "Tank in a fenced area and a compact metering station, with labelled branches.",
+            "res": "An organised installation, easy to inspect and compliant with applicable standards.",
+            "fotos": [
+              "../images/projectos/hotel-alvalade-1.webp",
+              "../images/projectos/hotel-alvalade-2.webp",
+              "../images/projectos/hotel-alvalade-3.webp",
+              "../images/projectos/hotel-alvalade-4.webp"
+            ],
+            "thumbs": [
+              "../images/projectos/hotel-alvalade-1-sm.webp",
+              "../images/projectos/hotel-alvalade-2-sm.webp",
+              "../images/projectos/hotel-alvalade-3-sm.webp",
+              "../images/projectos/hotel-alvalade-4-sm.webp"
+            ]
+          },
+          "condominio-royal": {
+            "nome": "Condomínio Royal",
+            "cat": "Residential",
+            "loc": "Talatona, Luanda",
+            "ano": "2023",
+            "serv": "Design, installation and technical supervision",
+            "gas": "Propane (LPG)",
+            "inst": "Buried tanks and network for homes",
+            "data": "4 buried tanks and 600 m of network",
+            "time": "12 weeks",
+            "ch": "Serving dozens of homes with works carried out in already inhabited areas.",
+            "sol": "Buried tanks, a network built section by section and daily technical supervision on site.",
+            "res": "Homes supplied by piped network, with no cylinders and greater safety.",
+            "fotos": [
+              "../images/projectos/condominio-royal-1.webp",
+              "../images/projectos/condominio-royal-2.webp",
+              "../images/projectos/condominio-royal-3.webp",
+              "../images/projectos/condominio-royal-4.webp"
+            ],
+            "thumbs": [
+              "../images/projectos/condominio-royal-1-sm.webp",
+              "../images/projectos/condominio-royal-2-sm.webp",
+              "../images/projectos/condominio-royal-3-sm.webp",
+              "../images/projectos/condominio-royal-4-sm.webp"
+            ]
+          },
+          "condominio-horizonte": {
+            "nome": "Condomínio Horizonte",
+            "cat": "Residential",
+            "loc": "Morro Bento, Luanda",
+            "ano": "2021",
+            "serv": "Design and installation",
+            "gas": "Propane (LPG)",
+            "inst": "Distribution network and metering cabinets",
+            "data": "450 m network and 36 metering points",
+            "time": "10 weeks",
+            "ch": "Bringing gas to several buildings without changing the facades.",
+            "sol": "Protected metering cabinets, with signage and extinguishers next to each point.",
+            "res": "Individual metering per unit and protected, signposted gas points.",
+            "fotos": [
+              "../images/projectos/condominio-horizonte-1.webp",
+              "../images/projectos/condominio-horizonte-2.webp",
+              "../images/projectos/condominio-horizonte-3.webp",
+              "../images/projectos/condominio-horizonte-4.webp"
+            ],
+            "thumbs": [
+              "../images/projectos/condominio-horizonte-1-sm.webp",
+              "../images/projectos/condominio-horizonte-2-sm.webp",
+              "../images/projectos/condominio-horizonte-3-sm.webp",
+              "../images/projectos/condominio-horizonte-4-sm.webp"
+            ]
+          },
+          "gastem": {
+            "nome": "GásTem",
+            "cat": "Industrial",
+            "loc": "Luanda",
+            "ano": "2022",
+            "serv": "Design and installation",
+            "gas": "Propane (LPG)",
+            "inst": "Large-capacity tanks",
+            "data": "2 tanks of 10,000 L",
+            "time": "5 weeks",
+            "ch": "Setting up large-capacity tanks in an open area with truck access.",
+            "sol": "Sized foundations, impact protection and safety signage.",
+            "res": "A large-scale gas reserve, ready for regular supply.",
+            "fotos": ["../images/projectos/gastem-1.webp", "../images/projectos/gastem-2.webp"],
+            "thumbs": [
+              "../images/projectos/gastem-1-sm.webp",
+              "../images/projectos/gastem-2-sm.webp"
+            ]
+          },
+          "ceramica-sociatal": {
+            "nome": "Cerâmica Sociatal",
+            "cat": "Industrial",
+            "loc": "Luanda",
+            "ano": "2023",
+            "serv": "Design, installation and testing",
+            "gas": "Propane (LPG)",
+            "inst": "Tank and network for the kilns",
+            "data": "1 tank of 5,000 L and 150 m of network",
+            "time": "6 weeks",
+            "ch": "Ensuring a constant flow for kilns that cannot stop.",
+            "sol": "A network sized for peak consumption, with per-branch regulation and shut-off valves.",
+            "res": "Stable consumption and avoided production stoppages.",
+            "fotos": ["../images/projectos/ceramica-sociatal-1.webp"],
+            "thumbs": ["../images/projectos/ceramica-sociatal-1-sm.webp"]
+          },
+          "lookal": {
+            "nome": "Lookal",
+            "cat": "Commercial",
+            "loc": "Ilha do Cabo, Luanda",
+            "ano": "2021",
+            "serv": "Design and installation",
+            "gas": "Propane (LPG)",
+            "inst": "Network for kitchen and dining room",
+            "data": "70 m of network and 6 consumption points",
+            "time": "3 weeks",
+            "ch": "Installing while the restaurant is open and visible to customers.",
+            "sol": "Assembly outside service hours, with a manual shut-off and clearly marked main cut-off.",
+            "res": "A safe kitchen with a quick response to any emergency.",
+            "fotos": [
+              "../images/projectos/lookal-1.webp",
+              "../images/projectos/lookal-2.webp",
+              "../images/projectos/lookal-3.webp"
+            ],
+            "thumbs": [
+              "../images/projectos/lookal-1-sm.webp",
+              "../images/projectos/lookal-2-sm.webp",
+              "../images/projectos/lookal-3-sm.webp"
+            ]
+          },
+          "restaurante-veneza": {
+            "nome": "Restaurante Veneza",
+            "cat": "Commercial",
+            "loc": "Luanda",
+            "ano": "2020",
+            "serv": "Design and installation",
+            "gas": "Propane (LPG)",
+            "inst": "Network with outdoor tank",
+            "data": "1 tank of 500 L and 60 m of network",
+            "time": "3 weeks",
+            "ch": "Powering the kitchen with little indoor space.",
+            "sol": "An outdoor tank with per-branch regulation for each piece of equipment.",
+            "res": "A kitchen with regular supply and less risk indoors.",
+            "fotos": [
+              "../images/projectos/restaurante-veneza-1.webp",
+              "../images/projectos/restaurante-veneza-2.webp",
+              "../images/projectos/restaurante-veneza-3.webp",
+              "../images/projectos/restaurante-veneza-4.webp"
+            ],
+            "thumbs": [
+              "../images/projectos/restaurante-veneza-1-sm.webp",
+              "../images/projectos/restaurante-veneza-2-sm.webp",
+              "../images/projectos/restaurante-veneza-3-sm.webp",
+              "../images/projectos/restaurante-veneza-4-sm.webp"
+            ]
+          }
+        }
+      }
+    </script>
+
+    <footer class="site-footer">
+      <div class="b-container">
+        <div class="row g-4 g-lg-5">
+          <!-- Identity: logo, signature and social networks -->
+          <div class="col-12 col-lg-4 ft-brand">
+            <picture>
+              <source
+                media="(max-width: 767.98px)"
+                srcset="../images/svg/Logo%20horizontal%20para%20fundos%20escuro.svg"
+              />
+              <img
+                src="../images/svg/Logo%20vertical%20para%20fundos%20escuro.svg"
+                alt="Daner Energias"
+                width="104"
+              />
+            </picture>
+            <p class="ft-sig">We changed because we grew.</p>
+            <div class="social" aria-label="Follow us">
+              <a
+                href="https://www.facebook.com/gasrepair.lda"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/gasrepair_lda"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/daner-energias"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="col-6 col-md-4 col-lg-2 order-2 order-md-0 ft-nav">
+            <details class="ft-acc" open>
+              <summary class="h">Navigation</summary>
+              <ul class="list-unstyled m-0">
+                <li><a href="index.html#daner">About Daner</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#contactos">Contact</a></li>
+              </ul>
+            </details>
+          </div>
+          <!-- Contacts and location -->
+          <div class="col-12 col-md-4 col-lg-3 order-4 order-md-0 ft-contact">
+            <p class="h">Contact</p>
+            <dl class="ft-list">
+              <div>
+                <dt>General e-mail</dt>
+                <dd><a href="mailto:geral@daner.ao">geral@daner.ao</a></dd>
+              </div>
+              <div>
+                <dt>Customer support</dt>
+                <dd><a href="tel:+244931849000">931 849 000</a></dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>Viana, Polo Industrial de Viana, km&nbsp;25, Luanda, Angola.</dd>
+              </div>
+            </dl>
+          </div>
+          <!-- Service by language -->
+          <div class="col-6 col-md-4 col-lg-3 order-3 order-md-0 ft-lang">
+            <details class="ft-acc" open>
+              <summary class="h">Service by language</summary>
+              <dl class="ft-list">
+                <div>
+                  <dt>Portuguese</dt>
+                  <dd><a href="tel:+244922709004">922 709 004</a></dd>
+                </div>
+                <div>
+                  <dt>English, French, Mandarin and Spanish</dt>
+                  <dd><a href="tel:+244922710097">+244 922 710 097</a></dd>
+                </div>
+              </dl>
+            </details>
+          </div>
+        </div>
+        <!-- Legal line: rights and policy links -->
+        <div class="legal">
+          <span>© 2026 Daner Energias. All rights reserved.</span>
+          <span class="legal-links"
+            ><a href="privacy.html">Privacy policy</a><a href="cookies.html">Cookie policy</a
+            ><a href="legal-information.html">Legal information</a></span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp button (tablet and mobile). href is set by js/daner.js; hidden in the footer. -->
+    <aside aria-label="Quick contact">
+      <a
+        id="wa-float"
+        class="wa-float"
+        href="#"
+        data-msg="Hello, I would like to speak with Daner Energias."
+        aria-label="Chat with us on WhatsApp"
+        ><i class="bi bi-whatsapp"></i
+      ></a>
+    </aside>
+
+    <!-- ========== SCRIPTS: libraries, then js/daner.js ========== -->
+    <script src="../js/vendor/jquery.min.js"></script>
+    <script src="../js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="../js/vendor/slick.min.js"></script>
+    <script src="../js/vendor/fancybox.umd.js"></script>
+    <script src="../js/vendor/aos.js"></script>
+    <script src="../js/daner.js"></script>
+  </body>
+</html>

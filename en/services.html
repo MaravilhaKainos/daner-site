@@ -1,0 +1,465 @@
+<!doctype html>
+<!-- Daner Energias | Serviços (en). Base: service-details.html do template Auron. Estilos e scripts partilhados com a página inicial. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gas network and LPG services | Daner Energias</title>
+    <meta
+      name="description"
+      content="Gas network design and installation, assembly of LPG cylinder filling lines, equipment conversion and bulk gas supply in Angola."
+    />
+    <meta name="theme-color" content="#1E2733" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Daner Energias" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="pt_AO" />
+    <meta property="og:title" content="Gas network and LPG services | Daner Energias" />
+    <meta
+      property="og:description"
+      content="Gas network design and installation, assembly of LPG cylinder filling lines, equipment conversion and bulk gas supply in Angola."
+    />
+    <meta property="og:url" content="https://daner.ao/en/services.html" />
+    <meta property="og:image" content="https://daner.ao/images/og-daner-en.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Daner Energias: we changed because we grew" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gas network and LPG services | Daner Energias" />
+    <meta
+      name="twitter:description"
+      content="Gas network design and installation, assembly of LPG cylinder filling lines, equipment conversion and bulk gas supply in Angola."
+    />
+    <meta name="twitter:image" content="https://daner.ao/images/og-daner-en.jpg" />
+    <link rel="icon" type="image/svg+xml" href="../images/svg/Simbulo.svg" />
+    <link rel="icon" type="image/png" href="../images/favicon-64.png" />
+    <!-- Alternate languages -->
+    <link rel="canonical" href="https://daner.ao/en/services.html" />
+    <link rel="alternate" hreflang="pt-AO" href="https://daner.ao/servicos.html" />
+    <link rel="alternate" hreflang="en" href="https://daner.ao/en/services.html" />
+    <link rel="alternate" hreflang="x-default" href="https://daner.ao/servicos.html" />
+    <!-- Styles: libraries, template, then Daner identity (order matters) -->
+    <link rel="stylesheet" href="../css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/vendor/aos.css" />
+    <link rel="stylesheet" href="../css/vendor/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../css/vendor/slick.css" />
+    <link rel="stylesheet" href="../css/vendor/fancybox.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/daner.css" />
+    <!-- Analytics: paste GA4, Meta Pixel and LinkedIn Insight Tag here (IDs to be confirmed) -->
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Skip to content</a>
+    <!-- ========== HEADER: logo, main menu, language switch and the Request an assessment button ========== -->
+    <header class="header border-bottom-color">
+      <div class="b-container">
+        <nav class="navbar navbar-expand-lg py-3 py-lg-1" aria-label="Main menu">
+          <div class="container-fluid">
+            <div class="logo-box">
+              <a class="navbar-brand" href="index.html"
+                ><img
+                  width="159"
+                  height="38"
+                  src="../images/svg/Logo%20horizontal%20para%20fundos%20escuro.svg"
+                  alt="Daner Energias"
+                  class="header-logo"
+              /></a>
+            </div>
+            <button
+              class="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Menu"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="offcanvas offcanvas-start bg-heading-color-3"
+              tabindex="-1"
+              id="offcanvasNavbar"
+            >
+              <div class="offcanvas-header">
+                <div class="logo-box">
+                  <a class="navbar-brand" href="index.html"
+                    ><img
+                      width="159"
+                      height="38"
+                      src="../images/svg/Logo%20horizontal%20para%20fundos%20escuro.svg"
+                      alt="Daner Energias"
+                      class="header-logo"
+                  /></a>
+                </div>
+                <button
+                  type="button"
+                  class="btn-close bg-accent-color-2"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div
+                class="offcanvas-body d-flex flex-column flex-lg-row justify-content-start justify-content-lg-end align-items-start align-items-lg-center gap-4 gap-lg-5"
+              >
+                <ul class="navbar-nav gap-lg-2 gap-xl-4">
+                  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html#daner">About Daner</a>
+                  </li>
+                  <!-- Services: grouped submenu (opens on hover on desktop; on mobile, tap the arrow) -->
+                  <li class="nav-item dropdown nav-serv">
+                    <div class="d-flex align-items-center">
+                      <a class="nav-link active" href="services.html" aria-current="page"
+                        >Services</a
+                      >
+                      <button
+                        class="nav-link dropdown-toggle icon-submenu"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        aria-label="Show services"
+                      >
+                        <i class="bi bi-chevron-down"></i>
+                      </button>
+                      <div class="dropdown-menu nav-serv-menu">
+                        <div class="nav-serv-group">
+                          <p class="nav-serv-h">Gas pipeline networks</p>
+                          <a class="dropdown-item" href="services/gas-network-design.html"
+                            >Gas network design</a
+                          >
+                          <a class="dropdown-item" href="services/installation-maintenance.html"
+                            >Installation and maintenance</a
+                          >
+                        </div>
+                        <div class="nav-serv-group">
+                          <p class="nav-serv-h">Industry and equipment</p>
+                          <a class="dropdown-item" href="services/lpg-filling-lines.html"
+                            >LPG cylinder filling lines <span class="nav-new">New</span></a
+                          >
+                          <a class="dropdown-item" href="services/equipment-conversion.html"
+                            >Equipment conversion</a
+                          >
+                        </div>
+                        <div class="nav-serv-group">
+                          <p class="nav-serv-h">Supply</p>
+                          <a class="dropdown-item" href="services/bulk-gas-supply.html"
+                            >Bulk gas supply</a
+                          >
+                        </div>
+                        <a class="nav-serv-all" href="services.html"
+                          >See all services <i class="bi bi-arrow-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html#contactos">Contact</a>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="../servicos.html">PT</a></li>
+                </ul>
+                <div class="mt-0 nav-cta">
+                  <a href="index.html#pedido" class="btn-cta-primary align-self-start"
+                    ><span class="btn-text">Request an assessment</span
+                    ><i class="bi bi-arrow-right-circle-fill btn-icon-primary"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+      <!-- ========== 1. HERO ========== -->
+      <section class="section hero-banner port-banner position-relative">
+        <div
+          class="port-banner-bg"
+          style="background-image: url(&quot;../images/projecto-3.jpg&quot;)"
+        ></div>
+        <div class="bg-overlay-5"></div>
+        <div class="b-container h-100 position-relative z-2 overflow-hidden">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center mx-auto text-center text-white gap-3"
+            style="max-width: 895px"
+          >
+            
+            <h1
+              class="text-white mb-0 from-left serv-h1"
+              data-aos="fade-right"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            >
+              Services
+            </h1>
+            <p class="serv-banner-head mb-0" data-aos="fade-up" data-aos-delay="450">From engineering to supply, gas solutions for operations that demand confidence.</p>
+            <p class="serv-banner-lead mb-0" data-aos="fade-up" data-aos-delay="550">We design, install, maintain and supply gas solutions for industry, hospitality, commerce and buildings.</p>
+            <a href="index.html#pedido" class="btn-cta-primary mt-2" data-aos="fade-up" data-aos-delay="650"
+              ><span class="btn-text">Request a technical assessment</span
+              ><i class="bi bi-arrow-right-circle-fill btn-icon-primary"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 2. OS NOSSOS SERVIÇOS ========== -->
+      <section class="section">
+        <div class="b-container">
+          <div class="sec-head">
+            <div class="eyebrow text-heading-color-2">What we do</div>
+            <h2 class="text-heading-color-3">Five services. One specialist team.</h2>
+          </div>
+          <div class="row g-3 g-lg-4 justify-content-center">
+            <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="0">
+              <div class="serv-group serv-card">
+                <i class="bi bi-diagram-3 serv-group-ico" aria-hidden="true"></i>
+                <h3>Gas network design</h3>
+                <p>Technical design, feasibility studies and sizing of gas networks, tailored to each installation.</p>
+                <a class="serv-more stretched-link" href="services/gas-network-design.html"
+                  >Discover the service<span class="visually-hidden">: Gas network design</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="80">
+              <div class="serv-group serv-card">
+                <i class="bi bi-tools serv-group-ico" aria-hidden="true"></i>
+                <h3>Installation and maintenance</h3>
+                <p>Execution, checking and maintenance of gas networks, in line with the technical requirements that apply to each installation.</p>
+                <a class="serv-more stretched-link" href="services/installation-maintenance.html"
+                  >Discover the service<span class="visually-hidden">: Installation and maintenance</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="160">
+              <div class="serv-group serv-card">
+                <i class="bi bi-arrow-repeat serv-group-ico" aria-hidden="true"></i>
+                <h3>Equipment conversion</h3>
+                <p>Adapting furnaces, boilers and other equipment that run on liquid fuels so they run on LPG, where technically viable.</p>
+                <a class="serv-more stretched-link" href="services/equipment-conversion.html"
+                  >Discover the service<span class="visually-hidden">: Equipment conversion</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="240">
+              <div class="serv-group serv-card serv-group-dark">
+                <i class="bi bi-gear-wide-connected serv-group-ico" aria-hidden="true"></i><span class="nav-new serv-card-new">New</span>
+                <h3>LPG filling lines</h3>
+                <p>Design and assembly of industrial LPG cylinder filling lines and systems, from the study to start-up.</p>
+                <a class="serv-more stretched-link" href="services/lpg-filling-lines.html"
+                  >Discover the service<span class="visually-hidden">: LPG filling lines</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="320">
+              <div class="serv-group serv-card">
+                <i class="bi bi-truck serv-group-ico" aria-hidden="true"></i>
+                <h3>Bulk gas supply</h3>
+                <p>LPG supply matched to the consumption needs and storage capacity of each customer.</p>
+                <a class="serv-more stretched-link" href="services/bulk-gas-supply.html"
+                  >Discover the service<span class="visually-hidden">: Bulk gas supply</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 3. EXPERIÊNCIA E CAPACIDADE (números já usados na página inicial) ========== -->
+      <section class="section serv-proof bg-heading-color-3">
+        <div class="b-container">
+          <div class="serv-proof-in">
+            <h2 class="h3 text-secondary-color" data-aos="fade-up">Years of work on gas installations for industry, hospitality, commerce and buildings.</h2>
+            <div class="serv-kpis serv-kpis-3" data-aos="fade-up" data-aos-delay="100"><div><span class="serv-kpi">20+</span><span class="serv-kpi-lbl">Years of experience</span></div><div><span class="serv-kpi">300+</span><span class="serv-kpi-lbl">Installations per year</span></div><div><span class="serv-kpi">24/7</span><span class="serv-kpi-lbl">Technical support</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 4. PROJECTOS SELECCIONADOS ========== -->
+      <section class="section">
+        <div class="b-container">
+          <div class="sec-head sec-head-row">
+            <div>
+              <div class="eyebrow text-heading-color-2">Selected projects</div>
+              <h2 class="text-heading-color-3">Proven experience in the field</h2>
+            </div>
+            <a href="portfolio.html" class="all-link"
+              >See all projects <i class="bi bi-arrow-right"></i
+            ></a>
+          </div>
+          <div class="row g-3 g-lg-4 proj-row">
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="0">
+              <a href="portfolio.html" class="proj-card">
+                <span class="proj-img"
+                  ><img width="1210" height="753" src="../images/projecto-1.jpg" alt="Outdoor gas network" loading="lazy" /><span class="proj-chip">Network installation</span></span
+                >
+                <span class="proj-title">Outdoor gas network</span>
+                <span class="proj-more">View project <i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <a href="portfolio.html" class="proj-card">
+                <span class="proj-img"
+                  ><img width="1210" height="959" src="../images/projecto-2.jpg" alt="Installation in an industrial plant" loading="lazy" /><span class="proj-chip">Industrial sector</span></span
+                >
+                <span class="proj-title">Installation in an industrial plant</span>
+                <span class="proj-more">View project <i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <a href="portfolio.html" class="proj-card">
+                <span class="proj-img"
+                  ><img width="1211" height="936" src="../images/projecto-3.jpg" alt="Tanks and technical team" loading="lazy" /><span class="proj-chip">Gas tanks</span></span
+                >
+                <span class="proj-title">Tanks and technical team</span>
+                <span class="proj-more">View project <i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 5. CHAMADA FINAL ========== -->
+      <section class="section pt-0">
+        <div class="b-container">
+          <div class="port-cta" data-aos="fade-up">
+            <div>
+              <h2 class="h3">Have a gas project to develop?</h2>
+              <p>Share your operation's needs with us. Our team will review your request and get in touch.</p>
+            </div>
+            <a href="index.html#pedido" class="btn-cta-primary"
+              ><span class="btn-text">Request a technical assessment</span
+              ><i class="bi bi-arrow-right-circle-fill btn-icon-primary"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="b-container">
+        <div class="row g-4 g-lg-5">
+          <!-- Identity: logo, signature and social networks -->
+          <div class="col-12 col-lg-4 ft-brand">
+            <picture>
+              <source
+                media="(max-width: 767.98px)"
+                srcset="../images/svg/Logo%20horizontal%20para%20fundos%20escuro.svg"
+              />
+              <img
+                src="../images/svg/Logo%20vertical%20para%20fundos%20escuro.svg"
+                alt="Daner Energias"
+                width="104"
+              />
+            </picture>
+            <p class="ft-sig">We changed because we grew.</p>
+            <div class="social" aria-label="Follow us">
+              <a
+                href="https://www.facebook.com/gasrepair.lda"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/gasrepair_lda"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/daner-energias"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="col-6 col-md-4 col-lg-2 order-2 order-md-0 ft-nav">
+            <details class="ft-acc" open>
+              <summary class="h">Navigation</summary>
+              <ul class="list-unstyled m-0">
+                <li><a href="index.html#daner">About Daner</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#contactos">Contact</a></li>
+              </ul>
+            </details>
+          </div>
+          <!-- Contacts and location -->
+          <div class="col-12 col-md-4 col-lg-3 order-4 order-md-0 ft-contact">
+            <p class="h">Contact</p>
+            <dl class="ft-list">
+              <div>
+                <dt>General e-mail</dt>
+                <dd><a href="mailto:geral@daner.ao">geral@daner.ao</a></dd>
+              </div>
+              <div>
+                <dt>Customer support</dt>
+                <dd><a href="tel:+244931849000">931 849 000</a></dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>Viana, Polo Industrial de Viana, km&nbsp;25, Luanda, Angola.</dd>
+              </div>
+            </dl>
+          </div>
+          <!-- Service by language -->
+          <div class="col-6 col-md-4 col-lg-3 order-3 order-md-0 ft-lang">
+            <details class="ft-acc" open>
+              <summary class="h">Service by language</summary>
+              <dl class="ft-list">
+                <div>
+                  <dt>Portuguese</dt>
+                  <dd><a href="tel:+244922709004">922 709 004</a></dd>
+                </div>
+                <div>
+                  <dt>English, French, Mandarin and Spanish</dt>
+                  <dd><a href="tel:+244922710097">+244 922 710 097</a></dd>
+                </div>
+              </dl>
+            </details>
+          </div>
+        </div>
+        <!-- Legal line: rights and policy links -->
+        <div class="legal">
+          <span>© 2026 Daner Energias. All rights reserved.</span>
+          <span class="legal-links"
+            ><a href="privacy.html">Privacy policy</a><a href="cookies.html">Cookie policy</a
+            ><a href="legal-information.html">Legal information</a></span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp button (tablet and mobile). href is set by js/daner.js; hidden in the footer. -->
+    <aside aria-label="Quick contact">
+      <a
+        id="wa-float"
+        class="wa-float"
+        href="#"
+        data-msg="Hello, I would like to speak with Daner Energias about your services."
+        aria-label="Chat with us on WhatsApp"
+        ><i class="bi bi-whatsapp"></i
+      ></a>
+    </aside>
+
+    <!-- ========== SCRIPTS: libraries, then js/daner.js ========== -->
+    <script src="../js/vendor/jquery.min.js"></script>
+    <script src="../js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="../js/vendor/slick.min.js"></script>
+    <script src="../js/vendor/fancybox.umd.js"></script>
+    <script src="../js/vendor/aos.js"></script>
+    <script src="../js/daner.js"></script>
+  </body>
+</html>

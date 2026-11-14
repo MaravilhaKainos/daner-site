@@ -1,0 +1,3304 @@
+/* ==========================================================================
+   DANER ENERGIAS - Ajustes do site
+   Este ficheiro vem DEPOIS de style.css (tema base Auron, já com as cores
+   e a fonte da Daner) e só contém o que é específico do nosso site.
+   Cores da marca: azul #0F50AC | lima #C1FF1B | azul-escuro #052038
+   ========================================================================== */
+
+/* --- Geral ----------------------------------------------------------------
+   Impede scroll horizontal causado pelas animações de entrada (AOS). */
+html,
+body,
+main {
+  overflow-x: clip;
+}
+
+/* --- Cabeçalho -------------------------------------------------------------
+   Barra azul-escura normal (não fica por cima do slider). */
+.header {
+  position: relative;
+  z-index: 20;
+  background: #052038;
+  margin-bottom: 0; /* o tema sobrepunha o hero ao cabeçalho (-100px); aqui não */
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+}
+
+/* --- Hero (slider) ---------------------------------------------------------
+   Altura = 80% do ecrã disponível (ecrã menos cabeçalho). */
+.home-hero {
+  height: calc((100vh - 99px) * 0.8);
+  min-height: 470px;
+  padding: 0; /* o tema acrescentava 170px no topo */
+}
+
+/* As imagens do slider já trazem o fundo azul/verde, por isso sem película. */
+.bg-overlay {
+  background: transparent;
+}
+
+.kb-carousel > .carousel-inner > .carousel-item > img {
+  opacity: 1;
+}
+
+/* Ecrãs grandes: o slider ocupa exactamente a altura do hero. Assim o texto
+   (centrado na vertical) fica centrado no que se vê e nunca é cortado. */
+@media (min-width: 1200px) {
+  .kb-carousel,
+  .kb-carousel .carousel-inner,
+  .kb-carousel .carousel-item {
+    height: 100%;
+  }
+
+  .kb-carousel .carousel-item > img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+/* Texto de cada slide: .cap-left fica à esquerda, .cap-right à direita. */
+.hero-cap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center; /* centra o grupo texto + botões na vertical */
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-cap-in {
+  max-width: 470px;
+  pointer-events: auto;
+}
+
+.hero-cap.cap-right {
+  justify-content: flex-end;
+}
+
+.hero-cap.cap-right .hero-cap-in {
+  text-align: left;
+}
+
+.hero-cap h1,
+.hero-cap .hero-title {
+  /* O tamanho acompanha a largura E a altura do ecrã, para nunca cortar */
+  font-size: clamp(30px, min(3.9vw, 6.8vh), 58px);
+  line-height: 1.05;
+  max-width: none;
+}
+
+.hero-cap p {
+  font-size: 19px;
+  font-weight: 300;
+  max-width: 380px;
+}
+
+.hero-cap .btn-cta-primary {
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+/* Botão de play do vídeo institucional (62px = 78px do tema menos 20%). */
+.play-wrap .icon-play {
+  font-size: 62px;
+}
+
+.play-wrap .radar-animate::before,
+.play-wrap .radar-animate::after {
+  width: 56px;
+  height: 56px;
+}
+
+.play-wrap {
+  position: relative;
+  pointer-events: auto;
+}
+
+.play-wrap a {
+  display: block;
+  line-height: 1;
+}
+
+.play-label {
+  font-size: 15px;
+  font-weight: 500;
+  max-width: 110px;
+  line-height: 1.25;
+}
+
+/* --- Menu: cor ao passar o rato ---------------------------------------------
+   Lima (cor da marca) com sublinhado, bem visível sobre o azul-escuro.
+   O link da página actual (.active) tem o mesmo sublinhado fixo. */
+.header .nav-link {
+  position: relative;
+}
+
+.header .nav-link:hover,
+.header .nav-link:focus {
+  color: #c1ff1b !important;
+}
+
+@media (min-width: 992px) {
+  .header .nav-link::after {
+    content: "";
+    position: absolute;
+    left: var(--bs-nav-link-padding-x, 0.5rem);
+    right: var(--bs-nav-link-padding-x, 0.5rem);
+    bottom: 22px;
+    height: 2px;
+    background: #c1ff1b;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  .header .nav-link:hover::after,
+  .header .nav-link.active::after {
+    transform: scaleX(1);
+  }
+}
+
+/* --- Soluções (4 cards) ----------------------------------------------------
+   Todos os cards com a mesma altura e os títulos alinhados
+   (o título reserva sempre 2 linhas). */
+.why-wrap {
+  transform: none !important;
+  gap: 14px;
+}
+
+.why-box {
+  min-height: 0;
+  gap: 0;
+}
+
+.why-content {
+  overflow: visible;
+}
+
+.why-title {
+  min-height: 2.4em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.why-box p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.why-ico {
+  font-size: 40px;
+  color: #c1ff1b;
+  line-height: 1;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.why-ico.dark {
+  color: #052038;
+}
+
+/* --- Quem somos ------------------------------------------------------------ */
+.who-stats {
+  border-color: #d5dbe2 !important;
+}
+
+/* --- Clientes (carrossel de logos) ---------------------------------------- */
+.our-partners {
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.client-wrapper {
+  overflow: hidden; /* esconde os logos que ainda estão fora do carrossel */
+  width: min(1160px, calc(100vw - 60px));
+}
+
+.client-logos {
+  width: 100%;
+}
+
+.client-logos img {
+  height: 73px;
+}
+
+/* --- Sectores e Projectos -------------------------------------------------- */
+.sec-img {
+  aspect-ratio: 16 / 9;
+}
+
+.proj-tag {
+  border-bottom-right-radius: 10px;
+  font-size: 15px;
+}
+
+.note {
+  color: #5a6572;
+  font-size: 14px;
+}
+
+/* --- Formulário de pedido de proposta -------------------------------------- */
+form {
+  background: #fff;
+  border: 1px solid #e3e8ee;
+  padding: 32px;
+  border-radius: 25px;
+}
+
+form label {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+form input,
+form select,
+form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 14px;
+  border: 1px solid #c9d1da;
+  border-radius: 10px;
+  font: inherit;
+  background: #fff;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: 2px solid #0f50ac;
+  border-color: #0f50ac;
+}
+
+/* Botões do formulário (Continuar, Voltar, Enviar). */
+.btn-d {
+  display: inline-block;
+  background: #0f50ac;
+  color: #fff;
+  font-weight: 500;
+  padding: 14px 28px;
+  border: 2px solid #0f50ac;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-d:hover {
+  background: #052038;
+  border-color: #052038;
+}
+
+.btn-d.ghost {
+  background: transparent;
+  color: #0f50ac;
+}
+
+.btn-d.ghost:hover {
+  background: #0f50ac;
+  color: #fff;
+}
+
+.row2 {
+  display: flex;
+  gap: 12px;
+}
+
+/* Campo "website" escondido: só os robots o preenchem (anti-spam). */
+.hp {
+  position: absolute;
+  left: -9999px;
+}
+
+/* Mensagem de sucesso ou erro do formulário. */
+.status {
+  margin: 16px 0 0;
+  font-weight: 500;
+}
+
+.status.err {
+  color: #b42318;
+}
+
+.status.ok {
+  color: #1f8d41;
+}
+
+/* --- Rodapé ---------------------------------------------------------------- */
+.site-footer {
+  background: #052038;
+  color: #b8c7d6;
+  padding: 48px 0 0;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #c1ff1b;
+}
+
+.site-footer .h {
+  color: #fff;
+  font-weight: 500;
+}
+
+.site-footer li {
+  margin-bottom: 8px;
+}
+
+.legal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  border-top: 1px solid #1b3a57;
+  margin-top: 32px;
+  padding: 18px 0;
+  font-size: 13px;
+}
+
+.legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+/* --- Ecrãs grandes: texto do slider afastado da moldura da imagem --------- */
+@media (min-width: 1200px) {
+  .cap-left .hero-cap-in {
+    padding-left: 110px;
+  }
+
+  .cap-right .hero-cap-in {
+    padding-right: 90px;
+  }
+}
+
+/* --- Tablet e telemóvel: imagem em cima, texto por baixo ------------------ */
+@media (max-width: 1199px) {
+  .home-hero {
+    height: auto;
+    background: #052038;
+  }
+
+  .kb-bg {
+    position: relative !important;
+    height: auto !important;
+  }
+
+  /* Altura da imagem proporcional à largura (mín. 272px, máx. 400px) e ancorada ao topo,
+     para o rosto aparecer sempre em tablet. */
+  .kb-carousel > .carousel-inner > .carousel-item > img {
+    height: clamp(272px, 36vw, 400px);
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .hero-cap {
+    position: relative;
+    height: auto;
+    padding: 28px 0;
+    display: block;
+  }
+
+  .hero-cap-in {
+    padding-top: 0;
+    max-width: none;
+  }
+
+  .hero-cap h1,
+  .hero-cap .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-cap p {
+    font-size: 17px;
+  }
+}
+
+/* --- Telemóvel e tablet pequeno (até 767px) ------------------------------- */
+@media (max-width: 767px) {
+  /* Texto do slider e rodapé com margem lateral (o tema não a dá aqui). */
+  .client-wrapper {
+    padding: 20px;
+  }
+
+  /* Cards das Soluções: uma coluna, por isso a altura ajusta-se ao texto. */
+  .why-box {
+    min-height: 0;
+    gap: 0;
+  }
+
+  .why-title {
+    min-height: 0;
+  }
+
+  .legal {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* --- Tablet e telemóvel (até 1199px): margem lateral no texto do slider e no rodapé --- */
+@media (max-width: 1199px) {
+  .hero-cap-in,
+  .site-footer .b-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* =========================================================================
+   HOMEPAGE COMPACTA (Nov 2026)
+   Menos altura: secções com menos espaço, cabeçalhos em cima do conteúdo
+   (em vez de numa coluna lateral) e conteúdo a usar toda a largura.
+   ========================================================================= */
+
+/* --- Espaço vertical das secções ------------------------------------------- */
+main .section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+@media (max-width: 767px) {
+  main .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+/* Cabeçalho de secção: etiqueta e título empilhados, por cima do conteúdo. */
+.sec-head {
+  margin-bottom: 32px;
+}
+
+.sec-head h6,
+.sec-head .eyebrow {
+  margin: 0 0 10px;
+}
+
+.sec-head h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.15;
+  max-width: 880px;
+}
+
+.sec-head.mb-3 {
+  margin-bottom: 16px !important;
+}
+
+.sec-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px 32px;
+  flex-wrap: wrap;
+}
+
+.all-link {
+  color: #0f50ac;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.all-link:hover {
+  color: #052038;
+}
+
+/* --- Navbar: botão principal (CTA) ----------------------------------------- */
+.nav-cta .btn-cta-primary {
+  white-space: nowrap;
+}
+
+.navbar-nav .nav-link {
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) and (max-width: 1399px) {
+  .navbar-nav {
+    gap: 4px !important;
+  }
+
+  .nav-cta .btn-text {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar-nav .nav-link {
+    font-size: 14px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .offcanvas-body {
+    gap: 16px !important;
+  }
+
+  .nav-cta .btn-cta-primary {
+    padding-left: 14px;
+  }
+
+  .nav-cta .btn-text {
+    font-size: 13px;
+  }
+}
+
+/* --- Serviços: cartões numa linha, mais baixos ----------------------------- */
+.why-box {
+  padding: 24px;
+}
+
+.why-title {
+  font-size: 22px;
+}
+
+.why-box p {
+  font-size: 15px;
+}
+
+/* --- Sobre a Daner ---------------------------------------------------------- */
+.who p {
+  margin-bottom: 14px;
+}
+
+.who-img {
+  aspect-ratio: 5 / 4;
+  max-height: 400px;
+}
+
+.stats-row {
+  margin-top: 40px;
+  padding: 28px 0;
+  border-top: 1px solid #d5dbe2;
+  border-bottom: 1px solid #d5dbe2;
+}
+
+.stats-row .count-up,
+.stats-row .count-static {
+  display: block;
+  font-size: clamp(32px, 8.4vw, 64px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stats-row h5,
+.stats-row .stat-lbl {
+  margin-top: 8px !important;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #4a5a6a;
+}
+
+/* Os três indicadores ficam lado a lado em todos os ecrãs. */
+.stats-row > div + div {
+  border-left: 1px solid #d5dbe2;
+  padding-left: 14px;
+}
+
+@media (min-width: 576px) {
+  .stats-row .count-up,
+  .stats-row .count-static {
+    font-size: clamp(44px, 4.6vw, 64px);
+  }
+
+  .stats-row h5,
+  .stats-row .stat-lbl {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .stats-row > div + div {
+    padding-left: 40px;
+  }
+}
+
+/* Faixa de clientes, na base da mesma secção. */
+.partners-band {
+  margin: 40px auto 0;
+  padding: 0;
+  max-width: 1000px;
+}
+
+/* Título pequeno, em maiúsculas e com espaçamento: fica claramente secundário aos números. */
+.partners-title {
+  margin: 0 0 12px;
+  text-align: center;
+  color: #5b6b7b;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.partners-band .client-logos img {
+  height: 56px;
+  filter: grayscale(1);
+}
+
+.partners-band .client-logos img:hover {
+  filter: none;
+}
+
+/* --- Sectores: Indústria em destaque + lista de três ----------------------- */
+.sector-feature {
+  position: relative;
+  height: 100%;
+  min-height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(193, 255, 27, 0.55);
+}
+
+.sector-feature img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sector-feature::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5, 32, 56, 0.95) 0%,
+    rgba(5, 32, 56, 0.6) 45%,
+    rgba(5, 32, 56, 0) 75%
+  );
+}
+
+.sector-feature-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 28px;
+}
+
+.sector-feature-text h3 {
+  margin: 0 0 8px;
+}
+
+.sector-feature-text p {
+  margin: 0 0 14px;
+  color: #dbe6f3;
+  max-width: 520px;
+}
+
+.sector-link {
+  color: #c1ff1b;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.sector-link:hover {
+  color: #fff;
+}
+
+.sector-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.sector-row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+}
+
+.sector-thumb {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.sector-thumb-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f50ac;
+  color: #c1ff1b;
+  font-size: 44px;
+}
+
+.sector-row h4 {
+  font-size: 20px;
+}
+
+.sector-row p {
+  font-size: 15px;
+}
+
+@media (max-width: 575px) {
+  .sector-feature {
+    min-height: 320px;
+  }
+
+  .sector-thumb {
+    flex-basis: 96px;
+    width: 96px;
+    height: 80px;
+  }
+}
+
+/* --- Projectos: três cartões -------------------------------------------------- */
+.proj-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.proj-img {
+  position: relative;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.proj-img img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.proj-card:hover .proj-img img {
+  transform: scale(1.04);
+}
+
+.proj-chip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #c1ff1b;
+  color: #052038;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-bottom-right-radius: 12px;
+}
+
+.proj-title {
+  display: block;
+  margin-top: 14px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #052038;
+}
+
+.proj-more {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0f50ac;
+}
+
+/* --- Qualidade: certificações (ISO) e licenciamento (IRDP) ------------------ */
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr; /* todos os cartões com a mesma altura */
+  gap: 14px;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+}
+
+.cert-irdp {
+  background: #052038;
+  border-color: #c1ff1b;
+}
+
+.cert-kind {
+  color: #c1ff1b;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cert-code {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.cert-name {
+  color: #dbe6f3;
+  font-size: 15px;
+}
+
+/* --- Formulário curto -------------------------------------------------------- */
+form {
+  padding: 28px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+form label {
+  margin-bottom: 14px;
+}
+
+@media (max-width: 575px) {
+  form {
+    padding: 22px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+form input.invalid,
+form select.invalid,
+form textarea.invalid {
+  border-color: #b42318;
+  outline: 1px solid #b42318;
+}
+
+.wa-alt {
+  font-size: 15px;
+  color: #5b6b7b;
+}
+
+.wa-alt a {
+  color: #0f50ac;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.wa-alt a:hover {
+  text-decoration: underline;
+}
+
+/* --- Rodapé organizado em quatro colunas ---------------------------------------- */
+.site-footer .h {
+  margin: 0 0 14px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.ft-sig {
+  margin: 14px 0 0;
+}
+
+.site-footer li {
+  margin-bottom: 8px;
+}
+
+/* Lista de contactos: etiqueta pequena por cima e valor por baixo. */
+.ft-list {
+  margin: 0;
+}
+
+.ft-list dt {
+  font-size: 13px;
+  font-weight: 400;
+  color: #8aa0b5;
+}
+
+.ft-list dd {
+  margin: 2px 0 0;
+  color: #fff;
+}
+
+.ft-list > div + div {
+  margin-top: 14px;
+}
+
+/* --- Rodapé: ícones das redes sociais ---------------------------------------- */
+.social {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #1b3a57;
+  border-radius: 50%;
+  font-size: 18px;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.social a:hover {
+  background: #c1ff1b;
+  border-color: #c1ff1b;
+  color: #052038;
+}
+
+.legal,
+.legal a,
+.legal-links {
+  font-size: 13px;
+}
+
+.ft-list dd,
+.ft-list dd a {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* --- Cartões ISO: selo à esquerda, texto à direita ---------------------------- */
+.cert-has-seal {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 18px;
+}
+
+.cert-seal {
+  width: 84px;
+  height: 84px;
+}
+
+.cert-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.cert-has-seal .cert-kind,
+.cert-has-seal .cert-code,
+.cert-has-seal .cert-name {
+  display: block;
+}
+
+.cert-has-seal .cert-code {
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .cert-has-seal {
+    column-gap: 12px;
+    padding: 14px;
+  }
+
+  .cert-seal {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 575px) {
+  .cert-seal {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* --- Hero 20% mais baixo: o texto escala com a altura para nunca cortar ------ */
+@media (min-width: 1200px) {
+  .hero-cap h1,
+  .hero-cap .hero-title {
+    font-size: clamp(24px, min(3.9vw, 4.7vh), 58px);
+  }
+
+  .hero-cap p {
+    font-size: clamp(14px, 2.1vh, 19px);
+  }
+
+  .hero-cap-in h6,
+  .hero-cap-in .eyebrow {
+    margin-bottom: clamp(6px, 1.2vh, 16px) !important;
+  }
+
+  .hero-cap-in h1,
+  .hero-cap-in .hero-title {
+    margin-bottom: clamp(8px, 1.6vh, 16px) !important;
+  }
+
+  .hero-cap-in p {
+    margin-bottom: clamp(12px, 2.2vh, 24px) !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-height: 800px) {
+  .play-wrap .icon-play {
+    font-size: 50px;
+  }
+
+  .hero-cap .btn-cta-primary {
+    transform: scale(0.92);
+    transform-origin: left center;
+  }
+}
+
+/* O desenho das imagens tem uma moldura que começa a 15% da altura da imagem
+   (10vw no ecrã). O texto fica centrado na vertical no slider; se o ecrã for tão baixo que
+   o texto chegasse à linha da moldura, desce o mínimo necessário para ficar 10px abaixo dela.
+   Dois espaçadores iguais (::before e ::after) fazem o centro; o de cima tem altura mínima. */
+@media (min-width: 1200px) {
+  .hero-cap {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .hero-cap::before,
+  .hero-cap::after {
+    content: "";
+    flex: 1 1 0;
+  }
+
+  .hero-cap::before {
+    min-height: calc(10vw + 10px);
+  }
+
+  /* Slide com texto à direita: a curva da moldura fecha-se junto ao topo e chegaria ao texto
+     em ecrãs baixos. Aqui o texto fica centrado no espaço por baixo da linha da moldura, que
+     o afasta da curva. */
+  .hero-cap.cap-right {
+    padding-top: calc(10vw + 8px);
+  }
+
+  .hero-cap.cap-right::before {
+    min-height: 0;
+  }
+
+  .hero-cap-in {
+    max-width: 560px;
+  }
+}
+
+/* Posição do texto dentro da moldura desenhada nas imagens (tudo em vw, porque a imagem
+   escala com a largura do ecrã). Slide com texto à esquerda: dentro da linha vertical da
+   moldura (que está a 8,8% da largura). Slide com texto à direita: antes da curva. */
+@media (min-width: 1200px) {
+  .hero-cap {
+    max-width: none;
+    margin: 0;
+    width: 100%;
+  }
+
+  .cap-left {
+    padding-left: calc(8.8vw + 36px);
+  }
+
+  .cap-left .hero-cap-in {
+    padding-left: 0;
+    max-width: 540px;
+  }
+
+  .hero-cap.cap-right {
+    justify-content: flex-start;
+    padding-left: 56vw;
+  }
+
+  .cap-right .hero-cap-in {
+    padding-right: 0;
+    max-width: min(420px, 31vw);
+  }
+
+  .cap-right h1,
+  .cap-right .hero-title {
+    font-size: clamp(22px, min(3.3vw, 4.2vh), 50px);
+  }
+
+  .cap-right p {
+    font-size: clamp(13px, 1.9vh, 17px);
+  }
+}
+
+/* Impede a quebra de linha dentro de uma expressão (ex.: "mantém-se"). */
+.nw {
+  white-space: nowrap;
+}
+
+/* --- Legibilidade: texto secundário um pouco maior e com melhor contraste ---- */
+#pedido {
+  scroll-margin-top: 140px;
+}
+
+.why-box p,
+.sector-row p,
+.cert-name,
+.proj-more,
+.wa-alt {
+  font-size: 16px;
+}
+
+.cert-kind,
+.ft-list dt,
+.legal,
+.legal-links {
+  font-size: 14px;
+}
+
+form label {
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.label-hint {
+  font-weight: 400;
+  color: #5b6b7b;
+}
+
+.who p {
+  color: #4b5563;
+}
+
+/* Quem tem "reduzir movimento" activo no sistema: o hero não faz zoom. */
+@media (prefers-reduced-motion: reduce) {
+  #carouselKenBurns .carousel-item > img {
+    animation: none;
+  }
+}
+
+/* Telemóvel e tablet estreito: dois cartões em cima e dois em baixo; selo por cima do texto. */
+@media (max-width: 767px) {
+  .cert-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .cert-card {
+    padding: 14px;
+    justify-content: flex-start;
+  }
+
+  .cert-has-seal {
+    grid-template-columns: 1fr;
+    align-content: start;
+    justify-items: start;
+    row-gap: 10px;
+  }
+
+  .cert-code {
+    font-size: 22px;
+  }
+
+  .cert-name {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .cert-kind {
+    font-size: 11px;
+  }
+}
+
+/* --- Rodapé em telemóvel: logótipo e assinatura lado a lado, duas colunas e contactos em grelha */
+@media (max-width: 767px) {
+  .ft-brand {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    align-items: center;
+  }
+
+  .ft-brand img {
+    width: 84px;
+    height: auto;
+  }
+
+  .ft-brand .ft-sig {
+    margin: 0;
+  }
+
+  .ft-brand .social {
+    grid-column: 1 / -1;
+    margin-top: 18px;
+  }
+
+  .ft-contact .ft-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 16px;
+  }
+
+  .ft-contact .ft-list > div + div {
+    margin-top: 0;
+  }
+
+  .ft-contact .ft-list > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .ft-contact .ft-list dd,
+  .ft-contact .ft-list dd a,
+  .ft-lang .ft-list dd,
+  .ft-lang .ft-list dd a {
+    font-size: 15px;
+  }
+
+  .legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-top: 8px;
+  }
+}
+
+/* ==========================================================================
+   Melhorias mobile (tablet e telemóvel)
+   ========================================================================== */
+
+/* Botão flutuante de WhatsApp */
+.wa-float {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .wa-float {
+    position: fixed;
+    right: calc(16px + env(safe-area-inset-right));
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #fff;
+    font-size: 28px;
+    box-shadow: 0 4px 14px rgba(5, 32, 56, 0.35);
+    transition:
+      opacity 0.25s,
+      transform 0.25s;
+  }
+  .wa-float:hover,
+  .wa-float:focus {
+    color: #fff;
+  }
+  .wa-float--hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+  }
+}
+
+/* Pontos do slider (só abaixo de 1200px, onde a imagem fica por cima do texto) */
+.home-hero .carousel-indicators,
+#carouselKenBurns .carousel-indicators {
+  display: none;
+}
+@media (max-width: 1199.98px) {
+  #carouselKenBurns .carousel-indicators {
+    display: flex;
+    top: calc(clamp(272px, 36vw, 400px) - 48px);
+    bottom: auto;
+    margin: 0;
+    z-index: 5;
+  }
+  #carouselKenBurns .carousel-indicators [data-bs-target] {
+    /* Área de toque de 44x44 px; o ponto visível continua com 8 px */
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    padding: 18px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #fff;
+    background-clip: content-box;
+    opacity: 0.6;
+    margin: 0;
+  }
+  #carouselKenBurns .carousel-indicators .active {
+    background-color: #c1ff1b;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Botões a toda a largura */
+  .btn-cta-primary,
+  .btn-d {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch !important;
+  }
+
+  /* Serviços em 2x2 */
+  #solucoes .why-box {
+    padding: 16px;
+  }
+  #solucoes .why-box h4,
+  #solucoes .why-box h5 {
+    font-size: 18px;
+  }
+  #solucoes .why-box p {
+    font-size: 15px;
+  }
+
+  /* Portefólio em carrossel por deslize */
+  .proj-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    --bs-gutter-x: 12px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 0 20px 4px;
+  }
+  .proj-row::-webkit-scrollbar {
+    display: none;
+  }
+  .proj-row > * {
+    flex: 0 0 82%;
+    max-width: 82%;
+    scroll-snap-align: start;
+  }
+
+  /* Contraste */
+  #contactos p {
+    color: #4b5563;
+  }
+  .stats-row h5,
+  .stats-row .stat-lbl {
+    font-size: 14px;
+  }
+
+  /* Logos mais pequenos para caberem 3 */
+  .partners-band .client-logos img {
+    height: 44px;
+  }
+
+  /* Menos espaço entre o slider e Serviços */
+  .hero-cap {
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 359.98px) {
+  #solucoes .why-box {
+    padding: 12px;
+  }
+  #solucoes .why-box h4,
+  #solucoes .why-box h5 {
+    font-size: 16px;
+  }
+  #solucoes .why-box p {
+    font-size: 14px;
+  }
+  .stats-row h5,
+  .stats-row .stat-lbl {
+    font-size: 12px;
+  }
+}
+
+/* Áreas de toque: mínimo de 44 px em ecrãs tácteis */
+@media (hover: none), (max-width: 991.98px) {
+  .sector-link,
+  .all-link,
+  #wa,
+  .ft-nav a,
+  .ft-contact a,
+  .ft-lang a,
+  .legal-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .legal-links {
+    column-gap: 8px;
+  }
+  .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .ft-social a,
+  footer .social a {
+    width: 44px;
+    height: 44px;
+  }
+  /* Pontos do slider: ponto visível de 8 px dentro de uma área de toque de 44 x 44 */
+  #carouselKenBurns .carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    width: 8px;
+    height: 8px;
+    padding: 18px;
+    margin: 0;
+    background-clip: content-box;
+    background-color: #fff;
+    border: 0;
+  }
+  #carouselKenBurns .carousel-indicators .active {
+    background-color: #c1ff1b;
+  }
+  #carouselKenBurns .carousel-indicators {
+    top: calc(clamp(272px, 36vw, 400px) - 44px);
+  }
+}
+
+/* ==========================================================================
+   Página mais curta em telemóvel
+   ========================================================================== */
+.more-toggle,
+.form-more {
+  display: none;
+}
+.ft-acc > summary {
+  list-style: none;
+  cursor: default;
+}
+.ft-acc > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  /* 1. Menos espaço entre secções */
+  main .section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .sec-head {
+    margin-bottom: 20px;
+  }
+
+  /* 2. Sectores: Indústria em destaque e as outras três por deslize */
+  .sector-feature {
+    min-height: 260px;
+  }
+  .sector-list {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin: 0 -20px;
+    padding: 0 20px 4px;
+    gap: 12px;
+    height: auto;
+  }
+  .sector-list::-webkit-scrollbar {
+    display: none;
+  }
+  .sector-row {
+    flex: 0 0 78%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    scroll-snap-align: start;
+  }
+  .sector-row .sector-thumb {
+    flex: none;
+    width: 100%;
+    height: 96px;
+  }
+
+  /* 3. Sobre a Daner: segundo parágrafo recolhido e imagem mais baixa */
+  .who-img {
+    aspect-ratio: 16 / 9;
+  }
+  .who-more {
+    display: none;
+  }
+  .who-more.open {
+    display: block;
+  }
+  .who-toggle,
+  .form-more {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0;
+    margin-bottom: 8px;
+    background: none;
+    border: 0;
+    color: #0f50ac;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  /* 4. Rodapé: navegação e idiomas em acordeões */
+  .ft-acc > summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    min-height: 44px;
+  }
+  .ft-acc > summary::after {
+    content: "+";
+    font-size: 20px;
+    color: #c1ff1b;
+  }
+  .ft-acc[open] > summary::after {
+    content: "\2212";
+  }
+  .ft-nav,
+  .ft-lang {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  /* 5. Formulário: empresa opcional, recolhida */
+  .opt-field {
+    display: none;
+  }
+  form.show-opt .opt-field {
+    display: block;
+  }
+  form.show-opt .form-more {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .sector-list,
+  .proj-row {
+    scroll-padding-left: 20px;
+  }
+  .ft-nav,
+  .ft-lang {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .ft-lang {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ft-acc > summary.h {
+    margin-bottom: 0;
+  }
+  .ft-acc[open] > summary.h {
+    margin-bottom: 8px;
+  }
+  .ft-nav,
+  .ft-lang {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Rodapé em telemóvel: logótipo horizontal com a assinatura por baixo */
+@media (max-width: 767.98px) {
+  .ft-brand {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    row-gap: 10px;
+  }
+  .ft-brand img {
+    width: 180px;
+  }
+  .ft-brand .social {
+    margin-top: 8px;
+  }
+}
+
+/* Cartões de serviço compactos em telemóvel */
+@media (max-width: 767.98px) {
+  #solucoes .why-ico {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  #solucoes .why-box p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+  #solucoes .why-box.open p {
+    display: block;
+    -webkit-line-clamp: unset;
+  }
+  #solucoes .why-toggle {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: 0;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: underline;
+    color: inherit;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #solucoes .why-toggle {
+    color: #c1ff1b;
+    opacity: 1;
+  }
+  #solucoes .why-box:has(p.text-heading-color-2) .why-toggle {
+    color: #052038;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #solucoes .why-ico {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  #solucoes .why-box {
+    gap: 12px;
+  }
+  #solucoes .why-wrap {
+    gap: 0;
+  }
+  #solucoes .why-title {
+    min-height: 2.4em;
+    margin-bottom: 8px !important;
+  }
+  #solucoes .why-toggle {
+    margin-top: -6px;
+  }
+}
+
+/* Serviços em telemóvel: só título e "Ler mais"; o texto abre ao tocar */
+@media (max-width: 767.98px) {
+  #solucoes .why-box p {
+    display: none;
+  }
+  #solucoes .why-box.open p {
+    display: block;
+    margin-bottom: 4px;
+  }
+  #solucoes .why-toggle {
+    margin-top: 0;
+  }
+  #solucoes .why-title {
+    margin-bottom: 0 !important;
+  }
+  #solucoes .why-box.open .why-title {
+    margin-bottom: 8px !important;
+  }
+}
+
+/* ==========================================================================
+   Página Portefólio (portefolio.html / en/portfolio.html)
+   ========================================================================== */
+.port-intro {
+  max-width: 640px;
+  margin: 12px 0 0;
+  font-size: 17px;
+  color: #4b5563;
+}
+.port-grid .service-box.project {
+  min-height: 340px;
+  height: 100%;
+}
+@media (min-width: 1200px) {
+  .port-grid .port-main .service-box.project {
+    min-height: 420px;
+  }
+}
+
+/* Bloco "método" com os números, ao lado do terceiro projecto */
+.port-method {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  height: 100%;
+  padding: 32px;
+  border-radius: 25px;
+  background: #052038;
+  color: #fff;
+}
+.port-method h3 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+.port-method p {
+  margin: 0;
+  max-width: 560px;
+  color: #cfd8e3;
+}
+.port-method-stats {
+  display: flex;
+  gap: 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+.port-method-stats > div {
+  flex: 1;
+}
+.port-method-stats > div + div {
+  padding-left: 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+.port-method-stats .count-static {
+  display: block;
+  font-weight: 900;
+  font-size: clamp(30px, 7.6vw, 52px);
+  line-height: 1.1;
+  color: #c1ff1b;
+}
+.port-method-stats h5,
+.port-method-stats .stat-lbl {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #cfd8e3;
+}
+
+/* Chamada final */
+.port-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 32px;
+  padding: 36px;
+  border-radius: 25px;
+  background: #c1ff1b;
+}
+.port-cta h3 {
+  margin: 0 0 6px;
+  color: #052038;
+}
+.port-cta p {
+  margin: 0;
+  max-width: 560px;
+  color: #1e2733;
+}
+
+@media (max-width: 767.98px) {
+  section.hero-banner {
+    padding-top: 150px;
+  }
+  .port-method,
+  .port-cta {
+    padding: 24px 20px;
+  }
+  .port-cta .btn-cta-primary {
+    width: 100%;
+  }
+}
+@media (hover: none) {
+  /* Em ecrãs tácteis não há "hover": a legenda do projecto fica sempre visível */
+  .port-grid .service-wrap {
+    transform: none;
+  }
+  .port-grid .service-box.project .bg-overlay-3 {
+    background: linear-gradient(180deg, rgba(5, 32, 56, 0) 35%, rgba(5, 32, 56, 0.92) 100%);
+  }
+}
+
+.port-grid > div {
+  display: flex;
+}
+.port-grid > div > .service-box.project,
+.port-grid > div > .port-method {
+  flex: 1;
+  width: 100%;
+}
+.port-grid .service-box.project {
+  min-height: 380px;
+}
+
+/* Portefólio: filtro, cartões e galeria */
+.port-grid > div {
+  display: block;
+}
+.port-filter {
+  display: flex;
+  gap: 10px;
+  margin: 0 -20px 24px;
+  padding: 0 20px 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.port-filter::-webkit-scrollbar {
+  display: none;
+}
+.port-chip {
+  flex: none;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid #d5dbe2;
+  border-radius: 999px;
+  background: #fff;
+  color: #052038;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.port-chip:hover {
+  border-color: #052038;
+}
+.port-chip.active {
+  background: #052038;
+  border-color: #052038;
+  color: #c1ff1b;
+}
+.port-card[hidden],
+.port-item[hidden] {
+  display: none !important;
+}
+.port-card .proj-img img {
+  aspect-ratio: 16 / 9;
+}
+.port-count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(5, 32, 56, 0.82);
+  color: #fff;
+  font-size: 13px;
+}
+.port-meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #5b6b7b;
+}
+.port-method {
+  margin-top: 40px;
+  flex-direction: column;
+}
+@media (min-width: 992px) {
+  .port-method {
+    margin-top: 56px;
+  }
+}
+@media (max-width: 767.98px) {
+  .port-card .proj-title {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .port-meta {
+    font-size: 13px;
+  }
+  .port-card .proj-chip {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .port-count {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+  .port-method {
+    margin-top: 32px;
+  }
+}
+
+/* Portefólio: ficha do projecto (modal) */
+.fancybox__container {
+  z-index: 1100;
+}
+.port-modal .modal-content {
+  border: 0;
+  border-radius: 25px;
+  background: #fff;
+}
+.port-modal .modal-body {
+  padding: 28px;
+}
+.port-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #c1ff1b;
+  opacity: 1;
+}
+.port-sheet {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 992px) {
+  .port-sheet {
+    grid-template-columns: 1.25fr 1fr;
+    gap: 32px;
+  }
+}
+.port-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  align-content: start;
+}
+.port-photo {
+  display: block;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.port-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.port-photo-main {
+  grid-column: 1 / -1;
+}
+.port-photo-main img {
+  aspect-ratio: 16 / 10;
+}
+.port-info h2 {
+  margin: 12px 0 4px;
+  color: #052038;
+  font-size: clamp(26px, 5vw, 36px);
+}
+.port-info h3 {
+  margin: 18px 0 8px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5b6b7b;
+}
+.proj-chip.static {
+  position: static;
+  display: inline-block;
+  border-radius: 8px;
+}
+.port-loc {
+  margin: 0;
+  color: #4b5563;
+}
+.port-draft {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 2px 10px;
+  border: 1px dashed #b45309;
+  border-radius: 999px;
+  color: #b45309;
+  font-size: 12px;
+}
+.port-info dl {
+  margin: 0;
+}
+.port-info dl > div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid #e3e8ee;
+}
+.port-info dt {
+  font-weight: 500;
+  color: #052038;
+}
+.port-info dd {
+  margin: 0;
+  color: #4b5563;
+}
+.port-story {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0;
+}
+@media (min-width: 768px) {
+  .port-story {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.port-story > div {
+  padding: 20px;
+  border-radius: 18px;
+  background: #f1f4f8;
+}
+.port-story h4 {
+  margin: 0 0 8px;
+  color: #0f50ac;
+  font-size: 18px;
+}
+.port-story p {
+  margin: 0;
+  color: #374151;
+}
+@media (max-width: 767.98px) {
+  .port-modal .modal-body {
+    padding: 56px 20px 24px;
+  }
+  .port-info dl > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .port-cta-btn {
+    width: 100%;
+  }
+}
+
+/* Banner do portefólio sem migalhas de pão: altura própria */
+section.hero-banner {
+  padding-bottom: 90px;
+}
+@media (max-width: 767.98px) {
+  section.hero-banner {
+    padding-bottom: 56px;
+  }
+}
+
+/* Banner do portefólio: a foto faz zoom out ao abrir a página (de 112% para 100%).
+   Para zoom in, trocar os valores de "from" e "to" em @keyframes banner-zoom. */
+.port-banner {
+  overflow: hidden;
+  background: #052038;
+}
+.port-banner-bg {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform-origin: center;
+  animation: banner-zoom 9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  will-change: transform;
+}
+@keyframes banner-zoom {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .port-banner-bg {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   ACESSIBILIDADE (revisão de 13 Nov 2026)
+   ========================================================================== */
+
+/* Rótulos pequenos acima dos títulos: eram h6; agora são div, com o mesmo aspecto. */
+.eyebrow {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+@media (max-width: 1199.98px) {
+  .eyebrow {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768.98px) {
+  .eyebrow {
+    font-size: 14px;
+  }
+}
+
+/* Rótulos das estatísticas: eram h5. */
+.stat-lbl {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+@media (max-width: 1199.98px) {
+  .stat-lbl {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768.98px) {
+  .stat-lbl {
+    font-size: 16px;
+  }
+}
+
+/* Foco do teclado: anel lima com contorno azul-escuro; visível sobre fundos claros e escuros. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible,
+.nav-link:focus-visible,
+.btn-cta-primary:focus-visible,
+.btn-d:focus-visible {
+  outline: 3px solid #c1ff1b !important;
+  outline-offset: 0;
+  box-shadow: 0 0 0 6px #052038 !important;
+  border-radius: 4px;
+}
+main:focus {
+  outline: none;
+}
+
+/* Link "Saltar para o conteúdo": só aparece quando recebe foco. */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -80px;
+  z-index: 3000;
+  padding: 12px 18px;
+  border-radius: 6px;
+  background: #c1ff1b;
+  color: #052038;
+  font-weight: 500;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* Botão de pausa do slider do hero (WCAG 2.2.2). */
+.hero-pause {
+  position: absolute;
+  right: 24px;
+  bottom: 28px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  background: rgba(5, 32, 56, 0.72);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+.hero-pause:hover {
+  background: #052038;
+  color: #c1ff1b;
+}
+@media (max-width: 1199.98px) {
+  .hero-pause {
+    top: calc(clamp(272px, 36vw, 400px) - 48px);
+    bottom: auto;
+    right: 16px;
+  }
+}
+.hero-paused .carousel-item > img {
+  animation-play-state: paused !important;
+}
+
+/* Contraste: texto de apoio no bloco de contactos e texto do hero sobre as fotos. */
+.contact-lead {
+  color: #4b5563;
+}
+.hero-cap h1,
+.hero-cap .hero-title,
+.hero-cap .eyebrow,
+.hero-cap p {
+  text-shadow: 0 1px 14px rgba(5, 32, 56, 0.55);
+}
+.hero-cap p {
+  font-weight: 400;
+}
+
+/* Imagens com width/height no HTML: a altura acompanha a largura quando o CSS não manda. */
+:where(img[width][height]) {
+  height: auto;
+}
+
+/* ==========================================================================
+   SUBMENU DE SERVIÇOS (todas as páginas)
+   "Serviços" leva à página; a seta abre o submenu com os serviços agrupados.
+   ========================================================================== */
+.nav-serv .icon-submenu {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.header .nav-link.icon-submenu::after {
+  display: none;
+}
+.nav-serv-menu {
+  width: 320px;
+  padding: 18px 20px 14px;
+  background: #0b2a47;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+.nav-serv-group + .nav-serv-group {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.nav-serv-h {
+  margin: 0 0 2px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8fa6bd;
+}
+.nav-serv-menu .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 7px 0;
+  font-size: 16px;
+  white-space: normal;
+}
+.nav-serv-menu .dropdown-item:hover,
+.nav-serv-menu .dropdown-item:focus {
+  color: #c1ff1b !important;
+}
+.nav-new {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #c1ff1b;
+  color: #052038;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+.nav-serv-all {
+  display: block;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c1ff1b;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.nav-serv-all:hover {
+  color: #fff;
+}
+@media (min-width: 992px) {
+  .nav-serv {
+    position: relative;
+  }
+  .nav-serv .dropdown-menu {
+    top: 100% !important;
+    left: -12px !important;
+    margin-top: 0;
+  }
+  /* Teclado e clique na seta também abrem o submenu (o template só abria com o rato) */
+  .nav-serv:focus-within .dropdown-menu,
+  .nav-serv .dropdown-menu.show {
+    display: block;
+  }
+  .nav-serv .icon-submenu {
+    padding: 32px 0 32px 6px !important;
+  }
+}
+/* Telemóvel (menu lateral): o submenu abre por baixo, dentro do menu, sem ficar por cima */
+@media (max-width: 991.98px) {
+  .nav-serv > div {
+    flex-wrap: wrap;
+  }
+  .nav-serv .icon-submenu {
+    margin-left: 12px;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-item.dropdown.nav-serv .dropdown-menu {
+    position: static !important;
+    flex-basis: 100%;
+    width: 100%;
+    margin: 6px 0 4px;
+    box-shadow: none;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   PÁGINA SERVIÇOS (servicos.html / en/services.html)
+   ========================================================================== */
+.serv-banner-lead {
+  max-width: 620px;
+  font-size: 19px;
+  color: #e6edf5;
+}
+
+/* Visão geral: três áreas */
+.serv-group {
+  height: 100%;
+  padding: 30px;
+  border: 1px solid #d5dbe2;
+  border-radius: 25px;
+  background: #fff;
+}
+.serv-group-ico {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 36px;
+  line-height: 1;
+  color: #0f50ac;
+}
+.serv-group h3 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  color: #052038;
+}
+.serv-group > p {
+  margin: 0 0 16px;
+  color: #4b5563;
+}
+.serv-group ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.serv-group li + li {
+  border-top: 1px solid #e3e8ee;
+}
+.serv-group li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 0;
+  color: #0f50ac;
+  font-weight: 500;
+  text-decoration: none;
+}
+.serv-group li a .bi-arrow-right {
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+.serv-group li a:hover .bi-arrow-right {
+  transform: translateX(4px);
+}
+.serv-group-dark {
+  border-color: #052038;
+  background: #052038;
+}
+.serv-group-dark .serv-group-ico {
+  color: #c1ff1b;
+}
+.serv-group-dark h3 {
+  color: #fff;
+}
+.serv-group-dark > p {
+  color: #cfd8e3;
+}
+.serv-group-dark li + li {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.serv-group-dark li a {
+  color: #fff;
+}
+.serv-group-dark li a:hover {
+  color: #c1ff1b;
+}
+
+/* Destaque: linhas de enchimento de GPL */
+.serv-feature-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  background: #fff;
+}
+.serv-feature-img img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 6 / 5;
+  object-fit: cover;
+}
+.serv-badge {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #c1ff1b;
+  color: #052038;
+  font-size: 15px;
+  font-weight: 500;
+}
+.serv-feature-title {
+  margin: 0 0 16px;
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.15;
+}
+.serv-feature p {
+  font-size: 17px;
+}
+.serv-checks {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+.serv-checks li {
+  position: relative;
+  padding: 5px 0 5px 30px;
+  color: #374151;
+}
+.serv-checks li::before {
+  content: "\F26A"; /* bi-check-circle-fill */
+  font-family: "bootstrap-icons";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: #0f50ac;
+}
+.serv-checks-light li {
+  color: #e6edf5;
+}
+.serv-checks-light li::before {
+  color: #c1ff1b;
+}
+.serv-kpis {
+  display: flex;
+  gap: 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+.serv-kpis > div {
+  flex: 1;
+}
+.serv-kpis > div + div {
+  padding-left: 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+.serv-kpi {
+  display: block;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #c1ff1b;
+  white-space: nowrap;
+}
+.serv-kpi-lbl {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #cfd8e3;
+}
+.serv-eq-head {
+  margin: 64px 0 24px;
+}
+.serv-eq-head h3 {
+  margin: 0 0 6px;
+  font-size: clamp(24px, 2.4vw, 32px);
+}
+.serv-eq-head p {
+  margin: 0;
+}
+.serv-eq {
+  height: 100%;
+  padding: 16px 16px 20px;
+  border-radius: 20px;
+  background: #0b2a47;
+}
+.serv-eq-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  padding: 12px;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  background: #fff;
+}
+.serv-eq-img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.serv-eq h4 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  color: #fff;
+}
+.serv-eq p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #cfd8e3;
+}
+.serv-eq-more {
+  margin: 24px 0 0;
+  font-size: 16px;
+}
+
+/* Processo (story-box do template, com número no canto) */
+.serv-step {
+  height: 100%;
+  padding: 30px 30px 96px;
+}
+.serv-step h3 {
+  margin: 0;
+  font-size: 23px;
+}
+.serv-step p {
+  margin: 0;
+}
+.serv-step-n {
+  font-size: 26px;
+  font-weight: 700;
+  color: #c1ff1b;
+}
+.serv-step.bg-heading-color-1 {
+  padding-bottom: 30px;
+  justify-content: space-between;
+}
+.serv-step-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #052038;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+}
+.serv-step-link .bi {
+  font-size: 30px;
+}
+.serv-step-link:hover {
+  color: #0f50ac;
+}
+
+/* Detalhe dos serviços: barra lateral fixa + artigos */
+.serv-side {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.serv-side .card-cta {
+  padding: 36px;
+}
+.serv-side-h {
+  margin: 16px 0 6px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8fa6bd;
+}
+.serv-side-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.serv-side-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  color: #efefef;
+  font-weight: 500;
+  text-decoration: none;
+}
+.serv-side-nav li a .bi {
+  font-size: 20px;
+  color: #c1ff1b;
+}
+.serv-side-nav li a:hover,
+.serv-side-nav li a.active {
+  color: #c1ff1b;
+}
+.serv-side-cta {
+  min-height: 300px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+}
+.serv-item {
+  scroll-margin-top: 24px;
+}
+.serv-item + .serv-item {
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid #e3e8ee;
+}
+.serv-item-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  margin-bottom: 28px;
+  border-radius: 25px;
+}
+.serv-item-title {
+  margin: 0 0 14px;
+  color: #052038;
+  font-size: clamp(28px, 2.8vw, 38px);
+}
+.serv-item p {
+  color: #374151;
+}
+.serv-item-sub {
+  margin: 28px 0 10px;
+  font-size: 20px;
+  color: #0f50ac;
+}
+.serv-steps-list {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  counter-reset: passo;
+}
+.serv-steps-list li {
+  position: relative;
+  padding: 8px 0 8px 46px;
+  counter-increment: passo;
+  color: #374151;
+}
+.serv-steps-list li::before {
+  content: counter(passo, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #052038;
+  color: #c1ff1b;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: center;
+}
+.serv-types {
+  margin: 24px 0 8px;
+}
+.serv-type {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f1f4f8;
+}
+.serv-type img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.serv-type > div {
+  padding: 18px 20px 20px;
+}
+.serv-type h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: #052038;
+}
+.serv-type p {
+  margin: 0;
+  font-size: 15px;
+}
+.serv-item .all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  white-space: normal;
+}
+.port-cta h2.h3 {
+  margin: 0 0 6px;
+  color: #052038;
+}
+
+@media (max-width: 991.98px) {
+  .serv-eq-head {
+    margin-top: 48px;
+  }
+}
+@media (max-width: 767.98px) {
+  .serv-banner-lead {
+    font-size: 16px;
+  }
+  .serv-group {
+    padding: 24px 20px;
+  }
+  .serv-kpis {
+    flex-wrap: wrap;
+  }
+  .serv-kpis > div {
+    padding-left: 10px;
+  }
+  .serv-kpis > div:first-child {
+    padding-left: 0;
+  }
+  .serv-kpi {
+    font-size: 24px;
+  }
+  .serv-kpi-lbl {
+    font-size: 12px;
+  }
+  .serv-feature .btn-cta-primary {
+    width: 100%;
+  }
+  .serv-eq {
+    padding: 10px 10px 14px;
+  }
+  .serv-eq h4 {
+    font-size: 16px;
+  }
+  .serv-eq p {
+    font-size: 13px;
+  }
+  .serv-step {
+    padding: 24px 24px 90px;
+  }
+  .serv-item + .serv-item {
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+  .serv-item-img {
+    aspect-ratio: 16 / 10;
+    border-radius: 18px;
+  }
+}
+
+/* Página inicial: ligação de cada cartão de serviço e destaque do novo serviço */
+.why-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  color: #c1ff1b;
+  font-weight: 500;
+  text-decoration: none;
+}
+.why-link:hover {
+  color: #fff;
+}
+.why-box.bg-heading-color-1 .why-link {
+  color: #052038;
+}
+.why-box.bg-heading-color-1 .why-link:hover {
+  color: #0f50ac;
+}
+@media (max-width: 767.98px) {
+  #solucoes .why-box .why-link {
+    display: none;
+  }
+  #solucoes .why-box.open .why-link {
+    display: inline-flex;
+    margin-top: 4px;
+  }
+}
+.serv-new {
+  display: grid;
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 25px;
+  background: #0b2a47;
+  border: 1px solid rgba(193, 255, 27, 0.35);
+}
+@media (min-width: 768px) {
+  .serv-new {
+    grid-template-columns: 300px 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .serv-new {
+    grid-template-columns: 420px 1fr;
+  }
+}
+.serv-new-img {
+  position: relative;
+  min-height: 220px;
+  background: #fff;
+}
+.serv-new-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.serv-new-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 32px;
+}
+.serv-new {
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.serv-new:hover {
+  border-color: #c1ff1b;
+}
+.serv-new-img img {
+  transition: transform 0.6s ease;
+}
+.serv-new:hover .serv-new-img img {
+  transform: scale(1.04);
+}
+.serv-new-h {
+  display: block;
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff;
+}
+.serv-new-p {
+  display: block;
+  max-width: 620px;
+  color: #cfd8e3;
+}
+.serv-new-text .btn-cta-primary {
+  margin-top: 8px;
+}
+.serv-new-img {
+  overflow: hidden;
+}
+.all-link.serv-all-light {
+  color: #c1ff1b;
+}
+.all-link.serv-all-light:hover {
+  color: #fff;
+}
+.serv-new-text .nav-new {
+  font-size: 13px;
+  padding: 4px 12px;
+}
+@media (max-width: 767.98px) {
+  .serv-new-text {
+    padding: 24px 20px;
+  }
+  .serv-new-text .btn-cta-primary {
+    width: 100%;
+  }
+}
+
+/* --- Serviços (revisão): página simplificada, 13 Nov 2026 ------------------- */
+.serv-banner-head {
+  max-width: 760px;
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 500;
+  line-height: 1.3;
+  color: #fff;
+  text-shadow: 0 1px 12px rgba(5, 32, 56, 0.6);
+}
+.serv-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.serv-card .serv-card-new {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+}
+.serv-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-top: auto;
+  color: #0f50ac;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.serv-more .bi {
+  transition: transform 0.2s;
+}
+.serv-more:hover .bi {
+  transform: translateX(4px);
+}
+.serv-group-dark .serv-more {
+  color: #c1ff1b;
+}
+.serv-row {
+  scroll-margin-top: 110px;
+}
+.serv-row + .serv-row {
+  margin-top: 64px;
+}
+.serv-row-img {
+  overflow: hidden;
+  border-radius: 25px;
+}
+.serv-row-img img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.serv-row p {
+  color: #374151;
+}
+.serv-row .serv-checks {
+  margin-bottom: 14px;
+}
+#linhas-enchimento {
+  scroll-margin-top: 90px;
+}
+.serv-lpg-note {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: #cfd8e3;
+}
+.serv-lpg-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 48px;
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+.serv-lpg-cols h3 {
+  margin: 0 0 16px;
+  font-size: 22px;
+  color: #fff;
+}
+.serv-lpg-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #e6edf5;
+}
+.serv-lpg-list strong {
+  display: block;
+  font-weight: 500;
+  color: #c1ff1b;
+}
+.serv-lpg-steps {
+  counter-reset: etapa;
+}
+.serv-lpg-steps li {
+  position: relative;
+  padding-left: 44px;
+  counter-increment: etapa;
+}
+.serv-lpg-steps li::before {
+  content: counter(etapa);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #c1ff1b;
+  color: #052038;
+  font-weight: 700;
+}
+@media (max-width: 767.98px) {
+  .serv-row-img img {
+    aspect-ratio: 16 / 9;
+  }
+  .serv-group.serv-card {
+    padding: 22px 20px;
+  }
+  .serv-card .serv-card-new {
+    top: 22px;
+    right: 20px;
+  }
+  .serv-row + .serv-row {
+    margin-top: 40px;
+  }
+  .serv-lpg-cols {
+    margin-top: 28px;
+    padding-top: 28px;
+  }
+}
+@media (max-width: 991.98px) {
+  .serv-lpg-cols {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+  }
+  .serv-row + .serv-row {
+    margin-top: 48px;
+  }
+}
+
+/* --- Serviços: páginas individuais e índice curto (13 Nov 2026, 2.ª revisão) ----- */
+.serv-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 4px;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-shadow: 0 1px 8px rgba(5, 32, 56, 0.7);
+}
+.serv-back:hover {
+  color: #c1ff1b;
+}
+.serv-badge-inline {
+  position: static;
+  display: inline-block;
+}
+.serv-h1 {
+  font-size: clamp(30px, 4.6vw, 56px);
+  line-height: 1.12;
+}
+.serv-what {
+  height: 100%;
+}
+.serv-what h3 {
+  font-size: 21px;
+}
+.serv-what > p {
+  margin-bottom: 0;
+}
+.serv-proof {
+  padding-block: 44px;
+}
+.serv-proof-in {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 32px 56px;
+  align-items: center;
+}
+.serv-proof-in h2 {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.serv-kpis-3 {
+  padding-top: 0;
+  border-top: 0;
+}
+.serv-proof-title {
+  margin: 0 0 20px;
+  font-size: clamp(26px, 3vw, 38px);
+}
+.serv-band {
+  padding-block: 56px;
+}
+.serv-band + .section {
+  margin-top: 48px;
+}
+.serv-band .serv-lpg-cols {
+  border-top: 0;
+  padding-top: 0;
+}
+.serv-related-h {
+  margin: 0 0 12px;
+  font-weight: 500;
+  color: #052038;
+}
+.serv-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.serv-related a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 1px solid #c7d0db;
+  border-radius: 999px;
+  background: #fff;
+  color: #052038;
+  font-weight: 500;
+  text-decoration: none;
+}
+.serv-related a:hover {
+  border-color: #052038;
+}
+@media (max-width: 991.98px) {
+  .serv-proof-in {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 575.98px) {
+  .serv-kpis-3 {
+    flex-wrap: wrap;
+    row-gap: 18px;
+  }
+  .serv-kpis-3 > div {
+    flex: 0 0 50%;
+  }
+  .serv-kpis-3 > div:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+/* --- Carrossel de imagens (linhas de enchimento) ------------------------------ */
+.serv-gallery {
+  border: 1px solid #dfe5ec;
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+}
+.serv-gal-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.serv-gal-track::-webkit-scrollbar {
+  display: none;
+}
+.serv-gal-track:focus-visible {
+  outline: 3px solid #0f50ac;
+  outline-offset: -3px;
+}
+.serv-gal-slide {
+  flex: 0 0 100%;
+  margin: 0;
+  scroll-snap-align: start;
+}
+.serv-gal-frame {
+  aspect-ratio: 4 / 3;
+  background: #fff;
+}
+.serv-gal-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.serv-gal-frame.is-cut img {
+  object-fit: contain;
+  padding: 14px;
+}
+.serv-gal-slide figcaption {
+  padding: 12px 18px 4px;
+  color: #052038;
+  font-weight: 500;
+}
+.serv-gal-ctrl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 12px 12px;
+}
+.serv-gal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #c7d0db;
+  border-radius: 50%;
+  background: #fff;
+  color: #052038;
+  font-size: 18px;
+  cursor: pointer;
+}
+.serv-gal-btn:hover:not(:disabled) {
+  background: #052038;
+  border-color: #052038;
+  color: #c1ff1b;
+}
+.serv-gal-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.serv-gal-btn:focus-visible {
+  outline: 3px solid #0f50ac;
+  outline-offset: 2px;
+}
+.serv-gal-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.serv-gal-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c7d0db;
+}
+.serv-gal-dots span.is-on {
+  background: #0f50ac;
+}
+@media (prefers-reduced-motion: reduce) {
+  .serv-gal-track {
+    scroll-behavior: auto;
+  }
+}
+
+/* --- Selos ISO no canto do banner das páginas de serviço ---------------------- */
+.serv-seals {
+  position: absolute;
+  right: 28px;
+  bottom: 22px;
+  z-index: 3;
+  display: flex;
+  gap: 12px;
+}
+.serv-seals img {
+  width: 64px;
+  height: 64px;
+  filter: drop-shadow(0 2px 6px rgba(5, 32, 56, 0.45));
+}
+@media (max-width: 767.98px) {
+  .serv-seals {
+    right: 14px;
+    bottom: 12px;
+    gap: 8px;
+  }
+  .serv-seals img {
+    width: 44px;
+    height: 44px;
+  }
+  .serv-seals ~ .b-container {
+    padding-bottom: 56px;
+  }
+}
