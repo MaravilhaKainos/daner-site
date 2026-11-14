@@ -3290,15 +3290,48 @@ main:focus {
 }
 @media (max-width: 767.98px) {
   .serv-seals {
-    right: 14px;
-    bottom: 12px;
-    gap: 8px;
+    display: none;
   }
-  .serv-seals img {
-    width: 44px;
-    height: 44px;
+}
+
+/* --- Páginas de serviço: banner mais curto no telemóvel; cartões «O que fazemos» menores --- */
+@media (max-width: 767.98px) {
+  section.hero-banner.serv-hero {
+    padding-top: 28px;
+    padding-bottom: 28px;
   }
-  .serv-seals ~ .b-container {
-    padding-bottom: 56px;
+  .serv-hero .d-flex {
+    gap: 10px !important;
+  }
+  .serv-hero .serv-h1 {
+    font-size: 28px;
+  }
+  .serv-hero .serv-banner-head {
+    font-size: 18px;
+  }
+  .serv-hero .serv-banner-lead {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .serv-hero .serv-back {
+    min-height: 36px;
+  }
+  .serv-hero .btn-cta-primary {
+    margin-top: 4px !important;
+  }
+}
+.serv-what {
+  padding: 22px 24px;
+}
+.serv-what .serv-group-ico {
+  margin-bottom: 8px;
+  font-size: 25px;
+}
+.serv-what h3 {
+  font-size: 20px;
+}
+@media (max-width: 767.98px) {
+  .serv-what {
+    padding: 18px 18px;
   }
 }
