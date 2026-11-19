@@ -117,7 +117,7 @@ def pagina(d, cfg, logo, qr_svg, foto=False):
     site_txt = cfg['site'].replace('https://', '')
     wa = f"https://wa.me/{digitos}?text=" + quote(f"Olá, {d['primeiro']}.")
     n = d['nome']; c = d['cargo']
-    ext_html = f'<span class="sub">Extensão {d["extensao"]}</span>' if d.get('extensao') else ''
+    ext_html = f' · Ext. {d["extensao"]}' if d.get('extensao') else ''
     apoio_html = (f'\n    <li><a href="tel:{cfg["apoio_cliente"]}">{ic("headset")}<span>{fmt_tel(cfg["apoio_cliente"])}<span class="sub">Apoio ao cliente</span></span></a></li>' if cfg.get('apoio_cliente') else '')
     avatar = (f'<div class="avatar"><img src="fotos/{d["slug"]}.jpg" alt="{n}" width="92" height="92"></div>' if foto
               else f'<!-- Sem fotografia: colocar uma imagem quadrada em fotos/{d["slug"]}.jpg (máx. 100 KB) e voltar a gerar -->\n    <div class="avatar" aria-hidden="true">{ic("user")}</div>')
