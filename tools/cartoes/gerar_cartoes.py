@@ -65,6 +65,8 @@ hr{border:0;border-top:1px solid var(--line);margin:22px 0 8px}
 .list{list-style:none}
 .list a{display:flex;align-items:flex-start;gap:14px;padding:12px 4px;color:#fff;text-decoration:none;font-size:16px;line-height:1.35;border-radius:10px;word-break:break-word}
 .list a:hover{background:rgba(255,255,255,.06)}
+.list .tels{display:flex;align-items:flex-start;gap:14px;padding:12px 4px;font-size:16px;line-height:1.35}
+.list .tels a{display:inline;padding:0;gap:0;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:4px}
 .sub{display:block;font-size:13px;color:var(--muted);margin-top:2px}
 .ic{width:20px;height:20px;flex:none;color:var(--lima);margin-top:1px}
 .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;border-radius:12px;font:700 17px Roboto,system-ui,sans-serif;text-decoration:none;cursor:pointer;border:0}
@@ -117,8 +119,10 @@ def pagina(d, cfg, logo, qr_svg, foto=False):
     site_txt = cfg['site'].replace('https://', '')
     wa = f"https://wa.me/{digitos}?text=" + quote(f"Olá, {d['primeiro']}.")
     n = d['nome']; c = d['cargo']
-    ext_html = f' · Ext. {d["extensao"]}' if d.get('extensao') else ''
-    apoio_html = (f'\n    <li><a href="tel:{cfg["apoio_cliente"]}">{ic("headset")}<span>{fmt_tel(cfg["apoio_cliente"])}<span class="sub">Apoio ao cliente</span></span></a></li>' if cfg.get('apoio_cliente') else '')
+    ext_html = f' <span style="white-space:nowrap">· Ext.&nbsp;{d["extensao"]}</span>' if d.get('extensao') else ''
+    apoio_html = ''
+    ap = cfg.get('apoio_cliente')
+    ap_link = (f', <a href="tel:{ap}" title="Apoio ao cliente">{fmt_tel(ap)[5:]}</a>' if ap else '')
     avatar = (f'<div class="avatar"><img src="fotos/{d["slug"]}.jpg" alt="{n}" width="92" height="92"></div>' if foto
               else f'<!-- Sem fotografia: colocar uma imagem quadrada em fotos/{d["slug"]}.jpg (máx. 100 KB) e voltar a gerar -->\n    <div class="avatar" aria-hidden="true">{ic("user")}</div>')
     return f'''<!DOCTYPE html>
@@ -152,7 +156,7 @@ def pagina(d, cfg, logo, qr_svg, foto=False):
   <hr>
 
   <ul class="list">
-    <li><a href="tel:{d['telefone']}">{ic('phone')}<span>{tel}{ext_html}</span></a></li>{apoio_html}
+    <li class="tels">{ic('phone')}<span><a href="tel:{d['telefone']}">{tel}</a>{ap_link}{ext_html}</span></li>
     <li><a href="mailto:{d['email']}">{ic('mail')}<span>{d['email']}</span></a></li>
     <li><a href="{cfg['site']}" target="_blank" rel="noopener">{ic('globe')}<span>{site_txt}</span></a></li>
     <li><a href="{mapa}" target="_blank" rel="noopener">{ic('pin')}<span>{morada}</span></a></li>

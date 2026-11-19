@@ -5,6 +5,8 @@ FN:Samuel Mundombe
 ORG:Daner Energias
 TITLE:Director Administrativo
 TEL;TYPE=WORK,VOICE,CELL:+244937880761
+item1.TEL;TYPE=WORK,VOICE:+244931849000
+item1.X-ABLabel:Apoio ao cliente
 EMAIL;TYPE=WORK,INTERNET:samuel@daner.ao
 URL:https://www.daner.ao
 ADR;TYPE=WORK:;;Polo Industrial de Viana\, km 20;Luanda;;;Angola
