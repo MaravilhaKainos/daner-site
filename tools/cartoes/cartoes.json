@@ -1,0 +1,73 @@
+{
+  "empresa": "Daner Energias",
+  "slogan": "Soluções energéticas seguras e eficientes",
+  "site": "https://www.daner.ao",
+  "morada": {
+    "rua": "Polo Industrial de Viana, km 20",
+    "cidade": "Luanda",
+    "pais": "Angola"
+  },
+  "directores": [
+    {
+      "slug": "amaro-servente",
+      "nome": "Amaro Servente",
+      "apelido": "Servente",
+      "primeiro": "Amaro",
+      "cargo": "Director Geral",
+      "telefone": "+244929943872",
+      "email": "amaro@daner.ao",
+      "extensao": "20"
+    },
+    {
+      "slug": "ivan-rosa",
+      "nome": "Ivan Rosa",
+      "apelido": "Rosa",
+      "primeiro": "Ivan",
+      "cargo": "Director Técnico",
+      "telefone": "+244921851415",
+      "email": "ivan@daner.ao",
+      "extensao": "13"
+    },
+    {
+      "slug": "angelina-sangivala",
+      "nome": "Angelina Sangivala",
+      "apelido": "Sangivala",
+      "primeiro": "Angelina",
+      "cargo": "Subdirectora de Vendas",
+      "telefone": "+244922709004",
+      "email": "angelina@daner.ao",
+      "extensao": "1"
+    },
+    {
+      "slug": "evander-tchipandeca",
+      "nome": "Evander Tchipandeca",
+      "apelido": "Tchipandeca",
+      "primeiro": "Evander",
+      "cargo": "Director de Vendas",
+      "telefone": "+244922710097",
+      "email": "evander@daner.ao",
+      "extensao": "2"
+    },
+    {
+      "slug": "samuel-mundombe",
+      "nome": "Samuel Mundombe",
+      "apelido": "Mundombe",
+      "primeiro": "Samuel",
+      "cargo": "Director Administrativo",
+      "telefone": "+244937880761",
+      "email": "samuel@daner.ao",
+      "extensao": "17"
+    },
+    {
+      "slug": "maravilha-mauricio",
+      "nome": "Maravilha Maurício",
+      "apelido": "Maurício",
+      "primeiro": "Maravilha",
+      "cargo": "Director de Marketing",
+      "telefone": "+244933035504",
+      "email": "maravilha@daner.ao",
+      "extensao": "15"
+    }
+  ],
+  "apoio_cliente": "+244931849000"
+}
