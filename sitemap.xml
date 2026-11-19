@@ -96,4 +96,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://daner.ao/en/services/bulk-gas-supply.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://daner.ao/servicos/fornecimento-gas-granel.html"/>
   </url>
+  <url>
+    <loc>https://daner.ao/sobre-a-daner.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-AO" href="https://daner.ao/sobre-a-daner.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daner.ao/en/about-daner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daner.ao/sobre-a-daner.html"/>
+  </url>
+  <url>
+    <loc>https://daner.ao/en/about-daner.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-AO" href="https://daner.ao/sobre-a-daner.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daner.ao/en/about-daner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daner.ao/sobre-a-daner.html"/>
+  </url>
 </urlset>

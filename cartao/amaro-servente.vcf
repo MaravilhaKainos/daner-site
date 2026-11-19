@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Servente;Amaro;;;
+FN:Amaro Servente
+ORG:Daner Energias
+TITLE:Director Operacional
+TEL;TYPE=WORK,VOICE,CELL:+244929943872
+EMAIL;TYPE=WORK,INTERNET:amaro@daner.ao
+URL:https://www.daner.ao
+ADR;TYPE=WORK:;;Polo Industrial de Viana\, km 20;Luanda;;;Angola
+NOTE:Daner Energias | Soluções energéticas seguras e eficientes.
+END:VCARD
